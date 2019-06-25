@@ -1,1 +1,0 @@
-﻿Position(str),  Rank(int), Score(float|int), Team(str), Name(str)
