@@ -1,0 +1,57 @@
+﻿/* 個人種目用CSS  射手の名前は2行まで*/
+@font-face {
+    font-family: 'certificate-bold';
+    src: url('../fonts/UDDigiKyokashoN-B001.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'certificate-normal';
+    //    src: url('../fonts/UDDigiKyokashoN-R001.ttf') format('truetype');
+    //    src: url('../fonts/21560.otf') format('opentype');
+        src: url('../fonts/35697.otf') format('opentype');
+    //    src: url('../fonts/35819.otf') format('opentype');
+}
+
+
+body {
+    font-family: certificate-normal;
+}
+
+div#certificate {
+    width: 100%;
+    text-align: center;
+}
+
+div#title {
+    padding-top: 70px;
+    height: 270px;
+    .shoujyou {
+//	font-family: certificate-bold;
+	font-weight: bold;
+	font-size: 90px;
+    }
+    .taikai {
+	margin: 25px;
+	font-weight: normal;
+	font-size: 32px;
+	line-height:10px;
+    }
+}
+
+div#result {
+    padding-top: 50px;
+    height: 330px;
+    font-size: 40px;
+    line-height: 15px;
+}
+
+div#final {
+    padding-top: 10px;
+    height: 150px;
+    .quote {
+	margin: 25px;
+	font-weight: normal;
+	font-size: 32px;
+	line-height: 10px;
+    }
+}
