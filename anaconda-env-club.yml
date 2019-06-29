@@ -91,9 +91,23 @@ dependencies:
   - wheel=0.33.4=py37_0
   - win_inet_pton=1.1.0=py37_0
   - wincertstore=0.2=py37_1002
+  - xlrd=1.2.0=py_0
   - xlsxwriter=1.1.8=py_0
   - zipp=0.5.1=py_0
   - zlib=1.2.11=h2fa13f4_1004
   - zope.interface=4.6.0=py37hfa6e2cd_1000
+  - pip:
+    - cairocffi==1.0.2
+    - cairosvg==2.4.0
+    - cssselect2==0.2.1
+    - defusedxml==0.6.0
+    - html5lib==1.0.1
+    - pdfkit==0.6.1
+    - pillow==6.0.0
+    - pyphen==0.9.5
+    - tinycss2==1.0.2
+    - weasyprint==47
+    - webencodings==0.5.1
+    - wkhtmltopdf==0.2
 prefix: C:\Users\seiic\Anaconda3\envs\club
 

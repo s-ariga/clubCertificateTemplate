@@ -1,19 +1,27 @@
 ﻿#!/usr/bin/env python
 # -*- coding : utf-8 -*-
+
+'''
+クラブ戦用
+賞状テンプレートを読んで、htmlとして返す
+'''
+
 import jinja2
+import pandas as pd
 
-class ParseCertificateTemplate:
-    def __init__():
-        pass
+class ParseCertificateTemplate():
+    def __init__(self, path, data):
+        self.tmplt_loader = jinja2.FileSystemLoader(searchpath="./")
+        self.tmplt_env = jinja2.Environment(loader=self.tmplt_loader)
 
-    def parseIndividual(tmpl: str, data: str):
-        pass
+        self.tmplt_file =  path
+        self.df = data
+      
+    def getCertificate(self):
+        '''
+        テンプレートに成績を流し込み、順位順にhtmlのリストに入れて返す
+        '''
+        assert self.tmplt_file is not None, 'Class not properly initialized.'
+        html = []
 
-    def parseMixTeam(tmpl: str, data: str):
-        pass
-
-    def parseTeamPosi(tmpl: str, data: str):
-        pass
-
-    def parseTeam(tmpl: str, data: str):
-        pass
+        return html
