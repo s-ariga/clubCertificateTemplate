@@ -4,7 +4,8 @@
 import datetime
 import jinja2
 import pdfkit
-import ParseCertificateTemplate
+import ParseCertificateTemplate as tp
+import pandas as pd
 
 # テンプレート置き場
 TEMPLATE_DIR = "../template/"
@@ -22,7 +23,7 @@ RESULT_TEAM_ALL = RESULT_DIR + "team_all.xlsx"
 
 # 出力先
 OUTPUT_DIR = "../output/"
-OUTPUT_TEAM_ALL = OUTPUT_DIR+"teamAll{0}.pdf"
+OUTPUT_TEAM_ALL = OUTPUT_DIR+"teamAll{0}.html"
 def createCerts():
     
     
@@ -30,15 +31,15 @@ def createCerts():
 
 def createCertsTeamAll():
 
-    result = pd.read_excel(RESULT_TEAM_ALL, dtype='object')
+    result = pd.read_excel(RESULT_TEAM_ALL)
     
-    html = ParseCertificateTemplate(TEMPLATE_TEAM_ALL, result)
+    html = tp.ParseCertificateTemplate('certificate-team-all.html', result)
 
     rank = 1
     for cert  in html.getCertificate():
         #pdfkit.from_string(cert, OUTPUT_DIR+"teamAll"+str(rank)+".pdf")
-        with f in open(OUTPUT_TEAM_ALL.format(str(rank)), mode="w"):
-            f.write(cert[rank])
+        with open(OUTPUT_TEAM_ALL.format(str(rank)), mode="w", encoding='utf-8') as f:
+            f.write(cert)
         rank += 1
         
 

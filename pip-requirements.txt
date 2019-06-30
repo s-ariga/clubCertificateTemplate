@@ -35,6 +35,7 @@ lxml==4.3.4
 Markdown==2.6.11
 MarkupSafe==1.1.1
 mccabe==0.6.1
+mojimoji==0.0.9
 more-itertools==4.3.0
 numpy==1.16.4
 Orange3==3.21.0
