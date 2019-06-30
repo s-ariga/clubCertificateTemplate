@@ -1,4 +1,5 @@
-﻿SASS := sass
+﻿# SCSS用汎用Makefile
+SASS := sass
 SCSSFLAGS :=
 SASSFLAGS := ${SCSSFLAGS}
 #
