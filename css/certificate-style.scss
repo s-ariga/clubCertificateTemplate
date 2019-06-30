@@ -26,7 +26,6 @@ div#title {
     padding-top: 70px;
     height: 270px;
     .shoujyou {
-//	font-family: certificate-bold;
 	font-weight: bold;
 	font-size: 90px;
     }
@@ -38,11 +37,19 @@ div#title {
     }
 }
 
-div#result {
+div.result {
     padding-top: 50px;
     height: 330px;
     font-size: 30px;
     line-height: 15px;
+}
+// 種目別団体戦用
+div.team-posi {
+    font-size: 24px;
+}
+// 総合団体用
+div.team-all {
+    font-size: 40px;
 }
 
 div#final {
