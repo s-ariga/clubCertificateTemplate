@@ -10,14 +10,18 @@ class Positions(Enum):
     AR60PR = 7
 #    ARMIX = 6
 
-POSITIONS = ['AR60',
-             'FR3X40',
-             'FR60PR',
-             'AR60W',
-             'R3X40',
-             'R60PR',
-             'AR60PR',
-             'ARMIX']
+AR = ['AR60',
+      'AR60W',
+      'AR60PR']
+
+MIX = ['ARMIX']
+
+SB = ['FR3X40',
+      'FR60PR',
+      'R3X40',
+      'R60PR']
+
+POSITIONS = AR + SB + MIX
 
 def position_exists(name):
     '''
