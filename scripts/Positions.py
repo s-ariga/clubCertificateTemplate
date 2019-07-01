@@ -17,6 +17,7 @@ class Positions(Enum):
 ** Mix種目は射手数がちがうので別にする
 ** ARとSBを分けたのは気分
 '''
+
 ARM = ['AR60']
 ARW = ['AR60W']
 AR = ['AR60PR']

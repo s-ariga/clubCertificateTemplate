@@ -17,6 +17,11 @@ body {
     font-family: certificate-normal;
 }
 
+.nraj-cert {
+    background-image: url('../images/cert-300dpi.jpg');
+    background-size: contain;
+}
+
 div#certificate {
     width: 100%;
     text-align: center;

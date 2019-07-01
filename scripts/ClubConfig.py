@@ -6,7 +6,7 @@
 
 '''
 テンプレート変数
-{{ Position }} : 種目名
+{{ Position }} : 種目名 (Positions.py参照)
 {{ Score }} : 点数
 {{ Rank }} : 順位
 {{ Team }} : チーム名
@@ -15,6 +15,7 @@
 {{ Name2 }} : 種目別団体氏名 MixTeam氏名
 {{ Name3 }} : 種目別団体氏名
 '''
+
 # テンプレート置き場ディレクトリ
 TEMPLATE_DIR = "../template/"
 # テンプレートファイル名
