@@ -3,7 +3,6 @@ PYTHON = python
 SCRIPT = ./createCerts.py
 
 .PHONY: combi version
-
 combi:
 	$(PYTHON) $(SCRIPT) -c
 
