@@ -20,16 +20,15 @@ class Positions(Enum):
 
 ARM = ['AR60']
 ARW = ['AR60W']
-AR = ['AR60PR']
+AR = ARM + ARW + ['AR60PR']
+
+SBM = ['FR3X40', 'FR60PR']
+SBW = ['R3X40', 'R60PR']
+SB = SBM + SBW
 
 MIX = ['ARMIX']
 
-SBM = ['FR3X40',
-      'FR60PR']
-SBW = ['R3X40',
-      'R60PR']
-
-POSITIONS = ARM + ARW + AR + SBM + SBW + MIX
+POSITIONS = SB + AR
 
 def position_exists(name):
     '''

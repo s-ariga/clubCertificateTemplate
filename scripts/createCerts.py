@@ -17,7 +17,7 @@ from ClubConfig import *
 def createCerts():
     pass
 
-def createCertsIndivitual(positions):
+def createCertsIndividual(positions):
     '''
     個人種目の表彰状を作成
     '''
@@ -94,7 +94,7 @@ if __name__ == "__main__":
                 print(pos.POSITIONS)
                 assert False, '種目名エラー'
                 sys.exit('Position name Error.')
-        createCertsIndivitual(args.position)
+        createCertsIndividual(args.position)
         if args.team:
             createCertsTeam(args.position)
 

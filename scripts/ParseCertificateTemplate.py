@@ -41,7 +41,7 @@ class ParseCertificateTemplate():
         assert len(self.df) == CERT_RANKS, '表彰者数が6じゃない'
 
         today = datetime.date.today()
-        self.year = self.get_reiwa(today.year, gannen = True)
+        self.year = self._get_reiwa(today.year, gannen = True)
         self.month, self.day = today.month, today.day
 
     def getCertificate(self, position='', team=False):
@@ -63,6 +63,7 @@ class ParseCertificateTemplate():
         for index, item in self.df.iterrows():
             if position in posi.AR+posi.SB:
                 if team == True:
+                    # 種目別団体
                     output = template.render(position = item[POSI],
                                              score = item[SCORE],
                                              rank = item[RANK],
@@ -74,15 +75,22 @@ class ParseCertificateTemplate():
                                              month = self.month,
                                              day = self.day)
                 else:
+                    # 種目別個人
+                    # チーム名と名前のフォントサイズを決める
+                    fontTeam  = self._get_font_size(item[TEAM], default_size = 45)
+                    fontName = self._get_font_size(item[NAME], default_size = 45)
                     output = template.render(position = item[POSI],
                                              score = item[SCORE],
                                              rank = item[RANK],
                                              team = item[TEAM],
                                              name = item[NAME],
+                                             fontTeam = self._font_size(fontTeam),
+                                             fontName = self._font_size(fontName),
                                              year = self.year,
                                              month = self.month,
                                              day = self.day)
             elif position == posi.MIX:
+                # ミックスチーム
                 output = template.render(score = item[SCORE],
                                          rank = item[RANK],
                                          team = item[TEAM],
@@ -92,12 +100,15 @@ class ParseCertificateTemplate():
                                          month = self.month,
                                          day = self.day)
             else:
+                # 総合団体
+                fs = self._get_font_size(item[TEAM], default_size = 60)
                 output = template.render(score = item[SCORE],
                                          rank = item[RANK],
                                          team = item[TEAM],
                                          year = self.year,
                                          month = self.month,
-                                         day = self.day)            
+                                         day = self.day,
+                                         fontSize = self._font_size(fs))
             html.append(output)
         return html
 
@@ -106,11 +117,11 @@ class ParseCertificateTemplate():
         当日以外の賞状を作るとき用
         年、月、日を設定
         '''
-        self.year = self.get_reiwa(year, gannen = True)
+        self.year = self._get_reiwa(year, gannen = True)
         self.month = month
         self.day = day
 
-    def get_reiwa(self, year, gannen = False):
+    def _get_reiwa(self, year, gannen = False):
         '''
         西暦 -> 令和　の変換
         '''
@@ -118,5 +129,17 @@ class ParseCertificateTemplate():
         reiwa = year - 2018
         return "元" if reiwa == 1 and gannen == True else reiwa
 
+    def _get_font_size(self, string, default_size = 50):
+        '''
+        1行に収まるフォントサイズを計算する(だいたい１１文字)
+        '''
+        WIDTH = 600
+        font_size = int(WIDTH / len(string))
+        print('Team Name: {0} len: {1} font-size: {2}'.format(string, len(string), font_size))
+        return font_size if font_size < default_size else default_size
+
+    def _font_size(self, fs):
+        return 'font-size:{0}px;'.format(fs)
+    
 if __name__ == '__main__':
     print("クラブ戦用賞状印刷")
