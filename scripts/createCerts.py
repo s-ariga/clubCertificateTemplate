@@ -21,7 +21,7 @@ def createCertsIndividual(positions):
     '''
     個人種目の表彰状を作成
     '''
-    result = pd.read_excel(RESULT_INDIVIDUAL, sheet_name=positions)
+
     '''
     with pd.ExcelWriter('test_posi.xlsx') as writer:    
         for pos in positions:
@@ -30,7 +30,8 @@ def createCertsIndividual(positions):
     html = {}
     cert_html = {}
     for pos in positions:
-        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_INDIVIDUAL, result[pos])
+        result = pd.read_excel(RESULT_INDIVIDUAL, sheet_name=pos)
+        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_INDIVIDUAL, result)
         cert_html[pos] = html[pos].getCertificate(position=pos)
         outputHTML(cert_html[pos], OUTPUT_INDIVIDUAL, pos)
 
@@ -38,7 +39,15 @@ def createCertsTeam(positions):
     '''
     種目別団体の表彰状を作成
     '''
-    pass
+
+    html = {}
+    cert_html = {}
+    for pos in positions:
+        result = pd.read_excel(RESULT_TEAM_POSI, sheet_name=pos)
+        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_TEAM_POSI, result)
+        cert_html[pos] = html[pos].getCertificate(position=pos)
+        outputHTML(cert_html[pos], OUTPUT_INDIVIDUAL, pos)
+
 
 def createCertsMixTeam():
     '''
@@ -66,7 +75,7 @@ def outputHTML(html, filename, pos = ''):
     assert type(pos) is str, '種目名指定エラー' 
     rank = 1
     for cert  in html:
-        assert rank < 7, '順位が7位以上あります'
+        assert rank < 9, '順位が9位以上あります'
         with open(filename.format(pos, str(rank)), mode='w', encoding='utf-8') as f:
             f.write(cert)
         rank += 1

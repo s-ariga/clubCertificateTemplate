@@ -21,7 +21,7 @@ NAME1 = 'Name1'
 NAME2 = 'Name2'
 NAME3 = 'Name3'
 
-CERT_RANKS = 6
+CERT_RANKS = 8
 
 class ParseCertificateTemplate():
     def __init__(self, path, filename, data):
@@ -36,9 +36,10 @@ class ParseCertificateTemplate():
         self.tmplt_loader = jinja2.FileSystemLoader(searchpath=path)
         self.tmplt_env = jinja2.Environment(loader=self.tmplt_loader)
         self.tmplt_file = filename
+        print(path + " " + filename)
         assert os.path.exists(path + filename), 'テンプレートファイルが存在しない'
         self.df = data
-        assert len(self.df) == CERT_RANKS, '表彰者数が6じゃない'
+        assert len(self.df) == CERT_RANKS, '表彰者数が8じゃない'
 
         today = datetime.date.today()
         self.year = self._get_reiwa(today.year, gannen = True)
