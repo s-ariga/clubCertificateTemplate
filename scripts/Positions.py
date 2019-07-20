@@ -1,5 +1,6 @@
 ﻿from enum import Enum, auto
 
+
 class Positions(Enum):
     AR60 = 0
     FR3X40 = 1
@@ -31,6 +32,7 @@ MIX = ['ARMIX']
 
 POSITIONS = SB + AR
 
+
 def position_exists(name):
     '''
     種目名の文字列が存在するか調べて返す
@@ -40,5 +42,5 @@ def position_exists(name):
     returns
     bool
     '''
-    assert name in POSITIONS, 'Wrong position name: ' + name 
+    assert name in POSITIONS, 'Wrong position name: ' + name
     return True if name in POSITIONS else False

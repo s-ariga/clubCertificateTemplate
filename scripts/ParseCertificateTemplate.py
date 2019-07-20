@@ -23,11 +23,12 @@ NAME3 = 'Name3'
 
 CERT_RANKS = 8
 
+
 class ParseCertificateTemplate():
     def __init__(self, path, filename, data):
         '''
         初期化でjinja2のインスタンスを作る
-        
+
         parameters
         path : テンプレートの相対パス str
         filename : テンプレートのファイル名 str
@@ -41,7 +42,7 @@ class ParseCertificateTemplate():
         self.df = data
 
         today = datetime.date.today()
-        self.year = self._get_reiwa(today.year, gannen = True)
+        self.year = self._get_reiwa(today.year, gannen=True)
         self.month, self.day = today.month, today.day
 
     def getCertificate(self, position='', team=False):
@@ -62,54 +63,54 @@ class ParseCertificateTemplate():
         html = []
         for index, item in self.df.iterrows():
             if position in posi.AR+posi.SB:
-                if team == True:
+                if team:
                     # 種目別団体
-                    output = template.render(position = item[POSI],
-                                             score = item[SCORE],
-                                             rank = item[RANK],
-                                             team = item[TEAM],
-                                             name1 = item[NAME1],
-                                             name2 = item[NAME2],
-                                             name3 = item[NAME3],
-                                             year = self.year,
-                                             month = self.month,
-                                             day = self.day)
+                    output = template.render(position=item[POSI],
+                                             score=item[SCORE],
+                                             rank=item[RANK],
+                                             team=item[TEAM],
+                                             name1=item[NAME1],
+                                             name2=item[NAME2],
+                                             name3=item[NAME3],
+                                             year=self.year,
+                                             month=self.month,
+                                             day=self.day)
                 else:
                     # 種目別個人
                     # チーム名と名前のフォントサイズを決める
                     print(item)
-                    fontTeam  = self._get_font_size(item[TEAM], default_size = 45)
-                    fontName = self._get_font_size(item[NAME], default_size = 45)
-                    output = template.render(position = item[POSI],
-                                             score = item[SCORE],
-                                             rank = item[RANK],
-                                             team = item[TEAM],
-                                             name = item[NAME],
-                                             fontTeam = self._font_size(fontTeam),
-                                             fontName = self._font_size(fontName),
-                                             year = self.year,
-                                             month = self.month,
-                                             day = self.day)
+                    fontTeam = self._get_font_size(item[TEAM], default_size=45)
+                    fontName = self._get_font_size(item[NAME], default_size=45)
+                    output = template.render(position=item[POSI],
+                                             score=item[SCORE],
+                                             rank=item[RANK],
+                                             team=item[TEAM],
+                                             name=item[NAME],
+                                             fontTeam=self._font_size(fontTeam),
+                                             fontName=self._font_size(fontName),
+                                             year=self.year,
+                                             month=self.month,
+                                             day=self.day)
             elif position in posi.MIX:
                 # ミックスチーム
-                output = template.render(score = item[SCORE],
-                                         rank = item[RANK],
-                                         team = item[TEAM],
-                                         name1 = item[NAME1],
-                                         name2 = item[NAME2],
-                                         year = self.year,
-                                         month = self.month,
-                                         day = self.day)
+                output = template.render(score=item[SCORE],
+                                         rank=item[RANK],
+                                         team=item[TEAM],
+                                         name1=item[NAME1],
+                                         name2=item[NAME2],
+                                         year=self.year,
+                                         month=self.month,
+                                         day=self.day)
             else:
                 # 総合団体
-                fs = self._get_font_size(item[TEAM], default_size = 60)
-                output = template.render(score = item[SCORE],
-                                         rank = item[RANK],
-                                         team = item[TEAM],
-                                         year = self.year,
-                                         month = self.month,
-                                         day = self.day,
-                                         fontSize = self._font_size(fs))
+                fs = self._get_font_size(item[TEAM], default_size=60)
+                output = template.render(score=item[SCORE],
+                                         rank=item[RANK],
+                                         team=item[TEAM],
+                                         year=self.year,
+                                         month=self.month,
+                                         day=self.day,
+                                         fontSize=self._font_size(fs))
             html.append(output)
         return html
 
@@ -118,29 +119,31 @@ class ParseCertificateTemplate():
         当日以外の賞状を作るとき用
         年、月、日を設定
         '''
-        self.year = self._get_reiwa(year, gannen = True)
+        self.year = self._get_reiwa(year, gannen=True)
         self.month = month
         self.day = day
 
-    def _get_reiwa(self, year, gannen = False):
+    def _get_reiwa(self, year, gannen=False):
         '''
         西暦 -> 令和　の変換
         '''
         assert year > 2018, '令和以前の日時'
         reiwa = year - 2018
-        return "元" if reiwa == 1 and gannen == True else reiwa
+        return "元" if reiwa == 1 and gannen else reiwa
 
-    def _get_font_size(self, string, default_size = 50):
+    def _get_font_size(self, string, default_size=50):
         '''
         1行に収まるフォントサイズを計算する(だいたい１１文字)
         '''
         WIDTH = 600
         font_size = int(WIDTH / len(string))
-        print('Team Name: {0} len: {1} font-size: {2}'.format(string, len(string), font_size))
+        print('Team Name: {0} len: {1} font-size: {2}'.format(string,
+                                                              len(string),
+                                                              font_size))
         return font_size if font_size < default_size else default_size
 
     def _font_size(self, fs):
         return 'font-size:{0}px;'.format(fs)
-    
+
 if __name__ == '__main__':
     print("クラブ戦用賞状印刷")

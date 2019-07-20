@@ -17,13 +17,14 @@ from ClubConfig import *
 def createCerts():
     pass
 
+
 def createCertsIndividual(positions):
     '''
     個人種目の表彰状を作成
     '''
 
     '''
-    with pd.ExcelWriter('test_posi.xlsx') as writer:    
+    with pd.ExcelWriter('test_posi.xlsx') as writer:
         for pos in positions:
             result[pos].to_excel(writer, sheet_name=pos, index=False)
     '''
@@ -31,9 +32,12 @@ def createCertsIndividual(positions):
     cert_html = {}
     for pos in positions:
         result = pd.read_excel(RESULT_INDIVIDUAL, sheet_name=pos)
-        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_INDIVIDUAL, result)
+        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
+                                                TEMPLATE_INDIVIDUAL,
+                                                result)
         cert_html[pos] = html[pos].getCertificate(position=pos)
         outputHTML(cert_html[pos], OUTPUT_INDIVIDUAL, pos)
+
 
 def createCertsTeam(positions):
     '''
@@ -44,7 +48,9 @@ def createCertsTeam(positions):
     cert_html = {}
     for pos in positions:
         result = pd.read_excel(RESULT_TEAM_POSI, sheet_name=pos)
-        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_TEAM_POSI, result)
+        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
+                                                TEMPLATE_TEAM_POSI,
+                                                result)
         cert_html[pos] = html[pos].getCertificate(position=pos, team=True)
         outputHTML(cert_html[pos], OUTPUT_TEAM_POSITION, pos)
 
@@ -54,34 +60,40 @@ def createCertsMixTeam():
     ミックスチームの表彰状を作成
     '''
     result = pd.read_excel(RESULT_MIXTEAM)
-    html = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_MIXTEAM, result)
+    html = tp.ParseCertificateTemplate(TEMPLATE_DIR,
+                                       TEMPLATE_MIXTEAM,
+                                       result)
     cert_html = html.getCertificate(position='ARMIX')
     outputHTML(cert_html, OUTPUT_MIXTEAM)
+
 
 def createCertsTeamCombined():
     '''
     総合団体の賞状を作成する
     '''
     result = pd.read_excel(RESULT_TEAM_COMBI)
-    html = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_TEAM_COMBI, result)
+    html = tp.ParseCertificateTemplate(TEMPLATE_DIR,
+                                       TEMPLATE_TEAM_COMBI,
+                                       result)
     cert_html = html.getCertificate()
     outputHTML(cert_html, OUTPUT_TEAM_COMBI)
 
 
-def outputHTML(html, filename, pos = ''):
+def outputHTML(html, filename, pos=''):
     '''
     HTMLをファイル出力
     '''
-    assert type(pos) is str, '種目名指定エラー' 
+    assert type(pos) is str, '種目名指定エラー'
     rank = 1
-    for cert  in html:
+    for cert in html:
         assert rank < 9, '順位が9位以上あります'
-        with open(filename.format(pos, str(rank)), mode='w', encoding='utf-8') as f:
+        with open(filename.format(pos, str(rank)),
+                  mode='w', encoding='utf-8') as f:
             f.write(cert)
         rank += 1
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description = 'クラブ戦用の賞状をhtmlで作成する')
+    parser = argparse.ArgumentParser(description='クラブ戦用の賞状をhtmlで作成する')
     parser.add_argument('--position', '-p', nargs='*',
                         help='作成する種目')
     parser.add_argument('--team', '-t', action='store_true',
@@ -106,16 +118,12 @@ if __name__ == "__main__":
         createCertsIndividual(args.position)
         if args.team:
             createCertsTeam(args.position)
-
     if args.mixteam:
         print('ARMIX')
         createCertsMixTeam()
-        
     if args.all_positions:
         createCertsIndividual(pos.POSITIONS)
         if args.team:
             createCertsTeam(pos.POSITIONS)
-    
     if args.combined:
         createCertsTeamCombined()
-    
