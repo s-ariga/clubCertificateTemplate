@@ -45,8 +45,8 @@ def createCertsTeam(positions):
     for pos in positions:
         result = pd.read_excel(RESULT_TEAM_POSI, sheet_name=pos)
         html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR, TEMPLATE_TEAM_POSI, result)
-        cert_html[pos] = html[pos].getCertificate(position=pos)
-        outputHTML(cert_html[pos], OUTPUT_INDIVIDUAL, pos)
+        cert_html[pos] = html[pos].getCertificate(position=pos, team=True)
+        outputHTML(cert_html[pos], OUTPUT_TEAM_POSITION, pos)
 
 
 def createCertsMixTeam():
@@ -108,6 +108,7 @@ if __name__ == "__main__":
             createCertsTeam(args.position)
 
     if args.mixteam:
+        print('ARMIX')
         createCertsMixTeam()
         
     if args.all_positions:

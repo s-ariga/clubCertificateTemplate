@@ -39,7 +39,6 @@ class ParseCertificateTemplate():
         print(path + " " + filename)
         assert os.path.exists(path + filename), 'テンプレートファイルが存在しない'
         self.df = data
-        assert len(self.df) == CERT_RANKS, '表彰者数が8じゃない'
 
         today = datetime.date.today()
         self.year = self._get_reiwa(today.year, gannen = True)
@@ -78,6 +77,7 @@ class ParseCertificateTemplate():
                 else:
                     # 種目別個人
                     # チーム名と名前のフォントサイズを決める
+                    print(item)
                     fontTeam  = self._get_font_size(item[TEAM], default_size = 45)
                     fontName = self._get_font_size(item[NAME], default_size = 45)
                     output = template.render(position = item[POSI],
@@ -90,7 +90,7 @@ class ParseCertificateTemplate():
                                              year = self.year,
                                              month = self.month,
                                              day = self.day)
-            elif position == posi.MIX:
+            elif position in posi.MIX:
                 # ミックスチーム
                 output = template.render(score = item[SCORE],
                                          rank = item[RANK],
