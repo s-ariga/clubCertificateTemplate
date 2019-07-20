@@ -8,7 +8,8 @@ class Positions(Enum):
     R3X40 = 4
     R60PR = 5
     AR60PR = 7
-#    ARMIX = 6
+    AR40PR = 8
+#    ARMIX = 9
 
 '''
 種目名　
@@ -20,7 +21,7 @@ class Positions(Enum):
 
 ARM = ['AR60']
 ARW = ['AR60W']
-AR = ARM + ARW + ['AR60PR']
+AR = ARM + ARW + ['AR60PR', 'AR40PR']
 
 SBM = ['FR3X40', 'FR60PR']
 SBW = ['R3X40', 'R60PR']

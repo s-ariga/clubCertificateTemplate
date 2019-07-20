@@ -5,7 +5,6 @@ import os
 import sys
 import datetime
 import argparse
-
 import jinja2
 import pandas as pd
 
@@ -13,6 +12,7 @@ import ParseCertificateTemplate as tp
 import Positions as pos
 
 from ClubConfig import *
+
 
 def createCerts():
     pass
