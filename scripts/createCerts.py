@@ -14,19 +14,20 @@ import Positions as pos
 from ClubConfig import *
 
 
-def createCerts(posistions, result, template, output, team=False):
+def createCerts(positions, result_file, template_file, output_file, team=False):
     html = {}
     cert_html = {}
-    for pos in positions:
-        if pos.position_exists(pos):
-            result = pd.read_excel(result, sheet_name=pos)
+    for posi in positions:
+        if pos.position_exists(posi):
+            print(result_file)
+            result = pd.read_excel(result_file, sheet_name=posi)
             html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
-                                                    template,
+                                                    template_file,
                                                     result)
-            cert_html[pos] = html[pos].getCertificate(position=pos, team=team)
-            outputHTML(cert_html[pos], output, pos)
+            cert_html[pos] = html[pos].getCertificate(position=posi, team=team)
+            outputHTML(cert_html[pos], output_file, posi)
         else:
-            print("Position " + pos + "doesn't exist.")
+            print("Position " + posi + "doesn't exist.")
     return cert_html
 
 
@@ -36,17 +37,9 @@ def createCertsIndividual(positions):
     '''
 
     html = {}
-    cert_html = createCerts(positions, REDULT_INDIVIDUAL, TEMPLATE_INDIVIDUAL,
+    cert_html = createCerts(positions, RESULT_INDIVIDUAL, TEMPLATE_INDIVIDUAL,
                             OUTPUT_INDIVIDUAL)
     
-#    for pos in positions:
-#        result = pd.read_excel(RESULT_INDIVIDUAL, sheet_name=pos)
-#        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
-#                                                TEMPLATE_INDIVIDUAL,
-#                                                result)
-#        cert_html[pos] = html[pos].getCertificate(position=pos)
-#        outputHTML(cert_html[pos], OUTPUT_INDIVIDUAL, pos)
-
 
 def createCertsTeam(positions):
     '''
@@ -124,14 +117,21 @@ if __name__ == "__main__":
                 print(pos.POSITIONS)
                 assert False, '種目名エラー'
                 sys.exit('Position name Error.')
-        createCertsIndividual(args.position)
+            if p == 'AR60PR' or p == 'AR40PR':
+                createCerts(pos.ARPR, RESULT_INDIVIDUAL, TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
+            else:
+                createCertsIndividual(args.position)
         if args.team:
-            createCertsTeam(args.position)
+            if 'AR60PR' in args.position or 'AR40PR' in args.position:
+                createCerts(pos.ARPR, RESULT_TEAM,
+                            TEMPLATE_ARPR_TEAM, OUTPUT_TEAM_POSITION)
+            else:
+                createCertsTeam(args.position)
     if args.mixteam:
         createCertsMixTeam()
     if args.all_positions:
         createCertsIndividual(pos.POSITIONS)
-        createCerts(pos.ARPR, REDULT_INDIVIDUAL, TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
+        createCerts(pos.ARPR, RESULT_INDIVIDUAL, TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
         if args.team:
             createCertsTeam(pos.POSITIONS)
             createCerts(pos.ARPR,
