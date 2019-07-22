@@ -23,6 +23,8 @@ TEMPLATE_INDIVIDUAL = "certificate-indivi.html"
 TEMPLATE_MIXTEAM = "certificate-mixteam.html"
 TEMPLATE_TEAM_POSI = "certificate-team-posi.html"
 TEMPLATE_TEAM_COMBI = "certificate-team-combi.html"
+TEMPLATE_ARPR = "certificate-arpr.html"
+TEMPLATE_TEAM_ARPR = "certificate-team-arpr.html"
 
 # 成績置き場ディレクトリ
 RESULT_DIR = "../results/"

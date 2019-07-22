@@ -22,16 +22,18 @@ class Positions(Enum):
 
 ARM = ['AR60']
 ARW = ['AR60W']
-AR = ARM + ARW + ['AR60PR', 'AR40PR']
+ARPR = ['AR60PR', 'AR40PR']
+ARSH = ['R1', 'R4']
+AR = ARM + ARW + ARPR + ARSH
 
 SBM = ['FR3X40', 'FR60PR']
 SBW = ['R3X40', 'R60PR']
-SB = SBM + SBW
-
-MIX = ['ARMIX']
+SBSH = ['R6']
+SB = SBM + SBW + SBSH
 
 POSITIONS = SB + AR
 
+MIX = ['ARMIX'] # ARMIXはPOSITIONSには入れない
 
 def position_exists(name):
     '''
@@ -42,5 +44,4 @@ def position_exists(name):
     returns
     bool
     '''
-    assert name in POSITIONS, 'Wrong position name: ' + name
     return True if name in POSITIONS else False

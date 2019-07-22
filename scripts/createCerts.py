@@ -14,8 +14,20 @@ import Positions as pos
 from ClubConfig import *
 
 
-def createCerts():
-    pass
+def createCerts(posistions, result, template, output, team=False):
+    html = {}
+    cert_html = {}
+    for pos in positions:
+        if pos.position_exists(pos):
+            result = pd.read_excel(result, sheet_name=pos)
+            html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
+                                                    template,
+                                                    result)
+            cert_html[pos] = html[pos].getCertificate(position=pos, team=team)
+            outputHTML(cert_html[pos], output, pos)
+        else:
+            print("Position " + pos + "doesn't exist.")
+    return cert_html
 
 
 def createCertsIndividual(positions):
@@ -23,20 +35,17 @@ def createCertsIndividual(positions):
     個人種目の表彰状を作成
     '''
 
-    '''
-    with pd.ExcelWriter('test_posi.xlsx') as writer:
-        for pos in positions:
-            result[pos].to_excel(writer, sheet_name=pos, index=False)
-    '''
     html = {}
-    cert_html = {}
-    for pos in positions:
-        result = pd.read_excel(RESULT_INDIVIDUAL, sheet_name=pos)
-        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
-                                                TEMPLATE_INDIVIDUAL,
-                                                result)
-        cert_html[pos] = html[pos].getCertificate(position=pos)
-        outputHTML(cert_html[pos], OUTPUT_INDIVIDUAL, pos)
+    cert_html = createCerts(positions, REDULT_INDIVIDUAL, TEMPLATE_INDIVIDUAL,
+                            OUTPUT_INDIVIDUAL)
+    
+#    for pos in positions:
+#        result = pd.read_excel(RESULT_INDIVIDUAL, sheet_name=pos)
+#        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
+#                                                TEMPLATE_INDIVIDUAL,
+#                                                result)
+#        cert_html[pos] = html[pos].getCertificate(position=pos)
+#        outputHTML(cert_html[pos], OUTPUT_INDIVIDUAL, pos)
 
 
 def createCertsTeam(positions):
@@ -119,11 +128,16 @@ if __name__ == "__main__":
         if args.team:
             createCertsTeam(args.position)
     if args.mixteam:
-        print('ARMIX')
         createCertsMixTeam()
     if args.all_positions:
         createCertsIndividual(pos.POSITIONS)
+        createCerts(pos.ARPR, REDULT_INDIVIDUAL, TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
         if args.team:
             createCertsTeam(pos.POSITIONS)
+            createCerts(pos.ARPR,
+                        RESULT_INDIVIDUAL,
+                        TEMPLATE_TEAM_ARPR,
+                        OUTPUT_TEAM_POSITION,
+                        team=True)
     if args.combined:
         createCertsTeamCombined()
