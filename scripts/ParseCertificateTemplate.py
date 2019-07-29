@@ -12,6 +12,11 @@ import datetime
 
 import Positions as posi
 
+# 賞状の日付け
+YEAR = 2019
+MONTH = 7
+DAY = 15
+
 POSI = 'Position'
 SCORE = 'Score'
 RANK = 'Rank'
@@ -44,6 +49,8 @@ class ParseCertificateTemplate():
         today = datetime.date.today()
         self.year = self._get_reiwa(today.year, gannen=True)
         self.month, self.day = today.month, today.day
+        # 第35回
+        self.set_day(YEAR, MONTH, DAY)
 
     def getCertificate(self, position='', team=False):
         '''
