@@ -6,14 +6,15 @@
 
 '''
 テンプレート変数
-{{ Position }} : 種目名 (Positions.py参照)
-{{ Score }} : 点数
-{{ Rank }} : 順位
-{{ Team }} : チーム名
-{{ Name }} : 個人氏名
-{{ Name1 }} : 種目別団体氏名 MixTeam氏名
-{{ Name2 }} : 種目別団体氏名 MixTeam氏名
-{{ Name3 }} : 種目別団体氏名
+{{ cert_type }} : 賞状の名前「賞　状」「選手権証」。個人だけ
+{{ passosition }} : 種目名 (Positions.py参照)
+{{ score }} : 点数
+{{ rank }} : 順位
+{{ team }} : チーム名
+{{ name }} : 個人氏名
+{{ name1 }} : 種目別団体氏名 MixTeam氏名
+{{ name2 }} : 種目別団体氏名 MixTeam氏名
+{{ name3 }} : 種目別団体氏名
 '''
 
 # テンプレート置き場ディレクトリ

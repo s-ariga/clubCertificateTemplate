@@ -13,7 +13,6 @@ import Positions as pos
 
 from ClubConfig import *
 
-
 def createCerts(positions, result_file, template_file, output_file, team=False):
     html = {}
     cert_html = {}
@@ -60,6 +59,7 @@ def createCertsTeam(positions):
 def createCertsMixTeam():
     '''
     ミックスチームの表彰状を作成
+    ミックスチームは、射手が二人なので、別テンプレート
     '''
     result = pd.read_excel(RESULT_MIXTEAM)
     html = tp.ParseCertificateTemplate(TEMPLATE_DIR,
@@ -122,6 +122,7 @@ if __name__ == "__main__":
             else:
                 createCertsIndividual(args.position)
         if args.team:
+            # AR60PRとAR40PRは別の試合扱い
             if 'AR60PR' in args.position or 'AR40PR' in args.position:
                 createCerts(pos.ARPR, RESULT_TEAM,
                             TEMPLATE_ARPR_TEAM, OUTPUT_TEAM_POSITION)
