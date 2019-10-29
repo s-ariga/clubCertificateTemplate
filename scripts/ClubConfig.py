@@ -32,7 +32,7 @@ RESULT_DIR = "../results/"
 # 成績ファイル名
 RESULT_INDIVIDUAL = RESULT_DIR + "individual.xlsx"
 RESULT_MIXTEAM = RESULT_DIR + "mixteam.xlsx"
-RESULT_TEAM_POSI = RESULT_DIR + "team-position.xlsx"
+RESULT_TEAM_POSI = RESULT_DIR + "team_position.xlsx"
 RESULT_TEAM_COMBI = RESULT_DIR + "team_combi.xlsx"
 
 # 出力先ディレクトリ
