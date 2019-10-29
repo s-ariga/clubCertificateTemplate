@@ -14,8 +14,8 @@ import Positions as posi
 
 # 賞状の日付け
 YEAR = 2019
-MONTH = 7
-DAY = 15
+MONTH = 10
+DAY = 13
 
 POSI = 'Position'
 SCORE = 'Score'
