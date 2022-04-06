@@ -80,7 +80,7 @@ sphinxcontrib-qthelp==1.0.2
 sphinxcontrib-serializinghtml==1.1.1
 sqlparse==0.3.0
 tinycss2==1.0.2
-Twisted==19.2.1
+Twisted==22.2.0
 urllib3==1.24.3
 w3lib==1.20.0
 wcwidth==0.1.7
