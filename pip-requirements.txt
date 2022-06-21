@@ -37,7 +37,7 @@ MarkupSafe==1.1.1
 mccabe==0.6.1
 mojimoji==0.0.9
 more-itertools==4.3.0
-numpy==1.16.4
+numpy==1.22.0
 Orange3==3.21.0
 packaging==19.0
 pandas==0.24.2
