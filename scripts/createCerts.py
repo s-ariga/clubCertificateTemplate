@@ -13,6 +13,7 @@ import Positions as pos
 
 from ClubConfig import *
 
+
 def createCerts(positions, result_file, template_file, output_file, team=False):
     html = {}
     cert_html = {}
@@ -38,7 +39,7 @@ def createCertsIndividual(positions):
     html = {}
     cert_html = createCerts(positions, RESULT_INDIVIDUAL, TEMPLATE_INDIVIDUAL,
                             OUTPUT_INDIVIDUAL)
-    
+
 
 def createCertsTeam(positions):
     '''
@@ -94,6 +95,7 @@ def outputHTML(html, filename, pos=''):
             f.write(cert)
         rank += 1
 
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='クラブ戦用の賞状をhtmlで作成する')
     parser.add_argument('--position', '-p', nargs='*',
@@ -118,7 +120,8 @@ if __name__ == "__main__":
                 assert False, '種目名エラー'
                 sys.exit('Position name Error.')
             if p == 'AR60PR' or p == 'AR40PR':
-                createCerts(pos.ARPR, RESULT_INDIVIDUAL, TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
+                createCerts(pos.ARPR, RESULT_INDIVIDUAL,
+                            TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
             else:
                 createCertsIndividual(args.position)
         if args.team:
@@ -132,7 +135,8 @@ if __name__ == "__main__":
         createCertsMixTeam()
     if args.all_positions:
         createCertsIndividual(pos.POSITIONS)
-        createCerts(pos.ARPR, RESULT_INDIVIDUAL, TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
+        createCerts(pos.ARPR, RESULT_INDIVIDUAL,
+                    TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
         if args.team:
             createCertsTeam(pos.POSITIONS)
             createCerts(pos.ARPR,

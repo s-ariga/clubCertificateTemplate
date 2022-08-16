@@ -12,8 +12,9 @@ class Positions(Enum):
     AR40PR = 8
 #    ARMIX = 9
 
+
 '''
-種目名　
+種目名
 テンプレート読み込み前に、この中に無い種目名はエラーを返します
 
 ** Mix種目は射手数がちがうので別にする
@@ -26,19 +27,20 @@ ARPR = ['AR60PR', 'AR40PR']
 ARSH = ['R1', 'R4']
 AR = ARM + ARW + ARPR + ARSH
 
-SBM = ['FR3X40', 'FR60PR']
-SBW = ['R3X40', 'R60PR']
+SBM = ['FR3X20', 'FR60PR']
+SBW = ['R3X20', 'R60PR']
 SBSH = ['R6']
 SB = SBM + SBW + SBSH
 
 POSITIONS = SB + AR
 
-MIX = ['ARMIX'] # ARMIXはPOSITIONSには入れない
+MIX = ['ARMIX']  # ARMIXはPOSITIONSには入れない
+
 
 def position_exists(name):
     '''
     種目名の文字列が存在するか調べて返す
-    parameters 
+    parameters
     name 種目名
 
     returns

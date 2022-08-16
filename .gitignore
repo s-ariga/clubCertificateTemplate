@@ -1,0 +1,18 @@
+# Seiichi Ariga <seiichi.ariga@gmail.com>
+
+# 外部のモジュール
+node_modules/
+fonts/
+paper-css/
+
+# 出力ファイル
+output/
+pdf/
+*.pdf
+
+# 入力ファイル
+results/
+
+# バックアップファイル
+*~
+

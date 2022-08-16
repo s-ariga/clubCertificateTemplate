@@ -1,5 +1,6 @@
 ﻿#!/usr/bin/env python
 # -*- coding : utf-8 -*-
+# Seiichi Ariga <seiichi.ariga@gmail.com>
 
 '''
 クラブ戦用
@@ -13,9 +14,9 @@ import datetime
 import Positions as posi
 
 # 賞状の日付け
-YEAR = 2019
-MONTH = 10
-DAY = 13
+YEAR = 2022
+MONTH = 7
+DAY = 18
 
 POSI = 'Position'
 SCORE = 'Score'
@@ -26,6 +27,7 @@ NAME1 = 'Name1'
 NAME2 = 'Name2'
 NAME3 = 'Name3'
 
+# 順位をどこまで表彰するか
 CERT_RANKS = 8
 
 
@@ -88,13 +90,20 @@ class ParseCertificateTemplate():
                     print(item)
                     fontTeam = self._get_font_size(item[TEAM], default_size=45)
                     fontName = self._get_font_size(item[NAME], default_size=45)
-                    output = template.render(position=item[POSI],
+                    if item[RANK] == 1:
+                        certtype = '選手権証'
+                    else:
+                        certtype = '賞　状'
+                    output = template.render(certtype=certtype,
+                                             position=item[POSI],
                                              score=item[SCORE],
                                              rank=item[RANK],
                                              team=item[TEAM],
                                              name=item[NAME],
-                                             fontTeam=self._font_size(fontTeam),
-                                             fontName=self._font_size(fontName),
+                                             fontTeam=self._font_size(
+                                                 fontTeam),
+                                             fontName=self._font_size(
+                                                 fontName),
                                              year=self.year,
                                              month=self.month,
                                              day=self.day)
@@ -143,6 +152,7 @@ class ParseCertificateTemplate():
         1行に収まるフォントサイズを計算する(だいたい１１文字)
         '''
         WIDTH = 600
+        print("font size: "+str(string))
         font_size = int(WIDTH / len(string))
         print('Team Name: {0} len: {1} font-size: {2}'.format(string,
                                                               len(string),
@@ -151,6 +161,7 @@ class ParseCertificateTemplate():
 
     def _font_size(self, fs):
         return 'font-size:{0}px;'.format(fs)
+
 
 if __name__ == '__main__':
     print("クラブ戦用賞状印刷")
