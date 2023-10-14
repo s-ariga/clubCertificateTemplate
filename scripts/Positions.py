@@ -1,4 +1,4 @@
-﻿from enum import Enum, auto
+﻿from enum import Enum
 
 
 class Positions(Enum):
@@ -11,6 +11,9 @@ class Positions(Enum):
     AR60PR = 7
     AR40PR = 8
 #    ARMIX = 9
+    FR3X20BR = 10
+    FR60PRBR = 11
+    FR40PRBR = 12
 
 
 '''
@@ -23,7 +26,7 @@ class Positions(Enum):
 
 ARM = ['AR60']
 ARW = ['AR60W']
-ARPR = ['AR60PR', 'AR40PR']
+ARPR = ['AR60PR']
 ARSH = ['R1', 'R4']
 AR = ARM + ARW + ARPR + ARSH
 
@@ -32,9 +35,12 @@ SBW = ['R3X20', 'R60PR']
 SBSH = ['R6']
 SB = SBM + SBW + SBSH
 
-POSITIONS = SB + AR
+P300 = ['300FR60PR', '300STR3X20', '300FR40PR']
+
+POSITIONS = SB + AR + P300
 
 MIX = ['ARMIX']  # ARMIXはPOSITIONSには入れない
+# POSITIONS = POSITIONS + MIX
 
 
 def position_exists(name):

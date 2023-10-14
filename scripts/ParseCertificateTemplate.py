@@ -14,9 +14,9 @@ import datetime
 import Positions as posi
 
 # 賞状の日付け
-YEAR = 2022
-MONTH = 7
-DAY = 18
+YEAR = 2023
+MONTH = 10
+DAY = 14
 
 POSI = 'Position'
 SCORE = 'Score'
@@ -28,7 +28,7 @@ NAME2 = 'Name2'
 NAME3 = 'Name3'
 
 # 順位をどこまで表彰するか
-CERT_RANKS = 8
+CERT_RANKS = 6
 
 
 class ParseCertificateTemplate():
@@ -58,6 +58,8 @@ class ParseCertificateTemplate():
         '''
         テンプレートに成績を流し込み、順位順にhtmlのリストに入れて返す
 
+        TODO: 2人以下の団体の場合、いない選手はnanという名前になる。(Jinja2を使っているため)
+
         parameters
         position : 種目名 デフォルト=団体
         team : 種目別団体 デフォルト=種目別個人
@@ -71,7 +73,7 @@ class ParseCertificateTemplate():
 
         html = []
         for index, item in self.df.iterrows():
-            if position in posi.AR+posi.SB:
+            if position in posi.POSITIONS:
                 if team:
                     # 種目別団体
                     output = template.render(position=item[POSI],
@@ -91,6 +93,8 @@ class ParseCertificateTemplate():
                     fontTeam = self._get_font_size(item[TEAM], default_size=45)
                     fontName = self._get_font_size(item[NAME], default_size=45)
                     if item[RANK] == 1:
+                        # 秋の大会用
+                        # certtype = '賞　状'
                         certtype = '選手権証'
                     else:
                         certtype = '賞　状'

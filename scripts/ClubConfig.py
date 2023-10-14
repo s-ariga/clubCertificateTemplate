@@ -1,4 +1,5 @@
 ﻿# -*- coding : utf-8 -*-
+# Seiichi Ariga <seiichi.ariga@gmail.com>
 
 '''
 ファイル関係の設定

@@ -4,11 +4,16 @@
 node_modules/
 fonts/
 paper-css/
+scripts/__pycache__/
 
 # 出力ファイル
 output/
+output-*/
+output/old/
 pdf/
 *.pdf
+*.ai
+*.xlsx
 
 # 入力ファイル
 results/

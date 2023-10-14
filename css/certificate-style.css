@@ -1,54 +1,67 @@
 @charset "UTF-8";
 /* 個人種目用CSS  射手の名前は2行まで*/
 @font-face {
-  font-family: 'certificate-bold';
-  src: url("../fonts/UDDigiKyokashoN-B001.ttf") format("truetype"); }
+  font-family: "certificate-bold";
+  src: url("../fonts/UDDigiKyokashoN-B001.ttf") format("truetype");
+}
 @font-face {
-  font-family: 'certificate-normal';
-  src: url("../fonts/21560.otf") format("opentype"); }
+  font-family: "certificate-normal";
+  src: url("../fonts/35697.otf") format("opentype");
+}
 body {
-  font-family: certificate-normal; }
+  font-family: certificate-normal;
+}
 
 .nraj-cert {
   background-image: url("../images/cert-300dpi.jpg");
-  background-size: contain; }
+  background-size: contain;
+}
 
 div#certificate {
   width: 100%;
-  text-align: center; }
+  text-align: center;
+}
 
 div#title {
   padding-top: 55px;
-  height: 250px; }
-  div#title .shoujyou {
-    font-weight: bold;
-    font-size: 85px; }
-  div#title .taikai {
-    margin: 32px;
-    font-weight: normal;
-    font-size: 34px;
-    line-height: 12px; }
+  height: 250px;
+}
+div#title .shoujyou {
+  font-weight: bold;
+  font-size: 85px;
+}
+div#title .taikai {
+  margin: 32px;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 12px;
+}
 
 div.result {
   padding-top: 70px;
-  height: 300px;
+  height: 250px;
   font-size: 30px;
-  line-height: 15px; }
+  line-height: 15px;
+}
 
 div.team-posi {
-  font-size: 24px; }
+  font-size: 24px;
+}
 
 div.team-all {
   margin: 2px;
-  font-size: 40px; }
+  font-size: 40px;
+}
 
 div#final {
   padding-top: 20px;
-  height: 150px; }
-  div#final .quote {
-    margin: 28px;
-    font-weight: normal;
-    font-size: 34px;
-    line-height: 12px; }
+  height: 120px;
+}
+div#final .quote {
+  margin: 28px;
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 12px;
+}
 
 /*# sourceMappingURL=certificate-style.css.map */

@@ -1,11 +1,11 @@
 ﻿#!/usr/bin/env python
 # -*- coding : utf-8 -*-
+# Seiichi Ariga <seiichi.ariga@gmail.com>
+
 
 import os
 import sys
-import datetime
 import argparse
-import jinja2
 import pandas as pd
 
 import ParseCertificateTemplate as tp
@@ -19,7 +19,7 @@ def createCerts(positions, result_file, template_file, output_file, team=False):
     cert_html = {}
     for posi in positions:
         if pos.position_exists(posi):
-            print(result_file)
+            print(result_file, "ファイル名:", posi)
             result = pd.read_excel(result_file, sheet_name=posi)
             html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
                                                     template_file,
@@ -27,7 +27,7 @@ def createCerts(positions, result_file, template_file, output_file, team=False):
             cert_html[pos] = html[pos].getCertificate(position=posi, team=team)
             outputHTML(cert_html[pos], output_file, posi)
         else:
-            print("Position " + posi + "doesn't exist.")
+            print("Position " + posi + " doesn't exist.")
     return cert_html
 
 
@@ -115,23 +115,25 @@ if __name__ == "__main__":
     if args.position:
         for p in args.position:
             if not pos.position_exists(p):
-                print('不正な種目名です. 種目名は以下のどれか')
+                print('不正な種目名 "' + p + '" です. 種目名は以下のどれか')
                 print(pos.POSITIONS)
                 assert False, '種目名エラー'
                 sys.exit('Position name Error.')
-            if p == 'AR60PR' or p == 'AR40PR':
+            if p == 'AR60PR':  # AR40は廃止(2022)
                 createCerts(pos.ARPR, RESULT_INDIVIDUAL,
                             TEMPLATE_ARPR, OUTPUT_INDIVIDUAL)
             else:
                 createCertsIndividual(args.position)
         if args.team:
-            # AR60PRとAR40PRは別の試合扱い
-            if 'AR60PR' in args.position or 'AR40PR' in args.position:
-                createCerts(pos.ARPR, RESULT_TEAM,
-                            TEMPLATE_ARPR_TEAM, OUTPUT_TEAM_POSITION)
+            # !AR60PRとAR40PRは別の試合扱い
+            # AR60PRは試合名が違うので、別のテンプレートを使用
+            if 'AR60PR' in args.position:  # !AR40PRは2022年から廃止
+                createCerts(pos.ARPR, RESULT_TEAM_POSI,
+                            TEMPLATE_TEAM_ARPR, OUTPUT_TEAM_POSITION)
             else:
                 createCertsTeam(args.position)
     if args.mixteam:
+      # ミックスチームは2人組なので専用テンプレートを使用
         createCertsMixTeam()
     if args.all_positions:
         createCertsIndividual(pos.POSITIONS)
