@@ -4,7 +4,7 @@
 # AR60PRは、秋はやらない
 # FR3x20, R3x20への対応 : 2022/07
 
-#python .\createCerts.py -c
+python .\createCerts.py -c
 #python .\createCerts.py -t -p AR60
 #python .\createCerts.py -t -p AR60W
 #python .\createCerts.py -t -p FR3X20

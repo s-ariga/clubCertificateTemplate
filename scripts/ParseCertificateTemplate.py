@@ -16,7 +16,7 @@ import Positions as posi
 # 賞状の日付け
 YEAR = 2023
 MONTH = 10
-DAY = 14
+DAY = 15
 
 POSI = 'Position'
 SCORE = 'Score'
@@ -27,9 +27,8 @@ NAME1 = 'Name1'
 NAME2 = 'Name2'
 NAME3 = 'Name3'
 
-# 順位をどこまで表彰するか
+# 順位をどこまで表彰するか（最大値）
 CERT_RANKS = 6
-
 
 class ParseCertificateTemplate():
     def __init__(self, path, filename, data):
