@@ -2,15 +2,15 @@
 
 
 class Positions(Enum):
-    AR60 = 0
-    FR3X40 = 1
-    FR60PR = 2
-    AR60W = 3
-    R3X40 = 4
-    R60PR = 5
-    AR60PR = 7
+    ARM = 0
+    R3PM = 1
+    RPRM = 2
+    ARW = 3
+    R3PW = 4
+    RPRW = 5
+    ARPR = 7
     AR40PR = 8
-#    ARMIX = 9
+    ARMIX = 9
     FR3X20BR = 10
     FR60PRBR = 11
     FR40PRBR = 12
@@ -24,14 +24,14 @@ class Positions(Enum):
 ** ARとSBを分けたのは気分
 '''
 
-ARM = ['AR60']
-ARW = ['AR60W']
-ARPR = ['AR60PR']
+ARM = ['ARM']
+ARW = ['ARW']
+ARPR = ['ARPR']
 ARSH = ['R1', 'R4']
 AR = ARM + ARW + ARPR + ARSH
 
-SBM = ['FR3X20', 'FR60PR']
-SBW = ['R3X20', 'R60PR']
+SBM = ['R3PM', 'RPRM']
+SBW = ['R3PW', 'RPRW']
 SBSH = ['R6']
 SB = SBM + SBW + SBSH
 
@@ -39,8 +39,8 @@ P300 = ['300FR60PR', '300STR3X20', '300FR40PR']
 
 POSITIONS = SB + AR + P300
 
-MIX = ['ARMIX']  # ARMIXはPOSITIONSには入れない
-# POSITIONS = POSITIONS + MIX
+ARMIX = ['ARMIX']  # ARMIXはPOSITIONSには入れない
+POSITIONS = POSITIONS + ARMIX
 
 
 def position_exists(name):

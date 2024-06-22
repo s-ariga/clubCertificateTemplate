@@ -11,7 +11,33 @@ import pandas as pd
 import ParseCertificateTemplate as tp
 import Positions as pos
 
-from ClubConfig import *
+# import ClubConfig
+
+# テンプレート置き場ディレクトリ
+TEMPLATE_DIR = "../template/"
+# テンプレートファイル名
+TEMPLATE_INDIVIDUAL = "certificate-indivi.html"
+TEMPLATE_MIXTEAM = "certificate-mixteam.html"
+TEMPLATE_TEAM_POSI = "certificate-team-posi.html"
+TEMPLATE_TEAM_COMBI = "certificate-team-combi.html"
+TEMPLATE_ARPR = "certificate-arpr.html"  # ARPRは大会の回数が違う
+TEMPLATE_TEAM_ARPR = "certificate-team-arpr.html"
+
+# 成績置き場ディレクトリ
+RESULT_DIR = "../results/"
+# 成績ファイル名
+RESULT_INDIVIDUAL = RESULT_DIR + "individual.xlsx"
+RESULT_MIXTEAM = RESULT_DIR + "mixteam.xlsx"
+RESULT_TEAM_POSI = RESULT_DIR + "team_position.xlsx"
+RESULT_TEAM_COMBI = RESULT_DIR + "team_combi.xlsx"
+
+# 出力先ディレクトリ
+OUTPUT_DIR = "../output/"
+# 出力ファイル名
+OUTPUT_INDIVIDUAL = OUTPUT_DIR + "Individual{0}-{1}.html"
+OUTPUT_MIXTEAM = OUTPUT_DIR + "MixTeam{0}-{1}.html"
+OUTPUT_TEAM_POSITION = OUTPUT_DIR + "Team{0}-{1}.html"
+OUTPUT_TEAM_COMBI = OUTPUT_DIR + "TeamCombined{0}-{1}.html"
 
 
 def createCerts(positions, result_file, template_file, output_file, team=False):
@@ -48,13 +74,13 @@ def createCertsTeam(positions):
 
     html = {}
     cert_html = {}
-    for pos in positions:
-        result = pd.read_excel(RESULT_TEAM_POSI, sheet_name=pos)
-        html[pos] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
+    for posi in positions:
+        result = pd.read_excel(RESULT_TEAM_POSI, sheet_name=posi)
+        html[posi] = tp.ParseCertificateTemplate(TEMPLATE_DIR,
                                                 TEMPLATE_TEAM_POSI,
                                                 result)
-        cert_html[pos] = html[pos].getCertificate(position=pos, team=True)
-        outputHTML(cert_html[pos], OUTPUT_TEAM_POSITION, pos)
+        cert_html[posi] = html[posi].getCertificate(position=posi, team=True)
+        outputHTML(cert_html[posi], OUTPUT_TEAM_POSITION, posi)
 
 
 def createCertsMixTeam():
@@ -82,15 +108,16 @@ def createCertsTeamCombined():
     outputHTML(cert_html, OUTPUT_TEAM_COMBI)
 
 
-def outputHTML(html, filename, pos=''):
+def outputHTML(html, filename, posi=''):
     '''
     HTMLをファイル出力
     '''
-    assert type(pos) is str, '種目名指定エラー'
+    # assert isinstance(posi, str), '種目名指定エラー'
     rank = 1
     for cert in html:
         assert rank < 9, '順位が9位以上あります'
-        with open(filename.format(pos, str(rank)),
+        print(filename)
+        with open(filename.format(posi, str(rank)),
                   mode='w', encoding='utf-8') as f:
             f.write(cert)
         rank += 1
@@ -109,7 +136,7 @@ if __name__ == "__main__":
     parser.add_argument('--combined', '-c', action='store_true',
                         help='総合団体の表彰状を作成')
     parser.add_argument('--version', '-v', action='version',
-                        version=os.path.basename(__file__) + ' ver.0.1')
+                        version=os.path.basename(__file__) + ' ver.0.1.10')
     args = parser.parse_args()
 
     if args.position:
@@ -127,9 +154,10 @@ if __name__ == "__main__":
         if args.team:
             # !AR60PRとAR40PRは別の試合扱い
             # AR60PRは試合名が違うので、別のテンプレートを使用
-            if 'AR60PR' in args.position:  # !AR40PRは2022年から廃止
-                createCerts(pos.ARPR, RESULT_TEAM_POSI,
-                            TEMPLATE_TEAM_ARPR, OUTPUT_TEAM_POSITION)
+            if 'ARPR' in args.position:  # !AR40PRは2022年から廃止
+                createCertsTeam('AR60PR')
+                # createCerts(pos.ARPR, RESULT_TEAM_POSI,
+                #           TEMPLATE_TEAM_ARPR, OUTPUT_TEAM_POSITION)
             else:
                 createCertsTeam(args.position)
     if args.mixteam:

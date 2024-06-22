@@ -15,8 +15,8 @@ import Positions as posi
 
 # 賞状の日付け
 YEAR = 2023
-MONTH = 10
-DAY = 15
+MONTH = 11
+DAY = 26
 
 POSI = 'Position'
 SCORE = 'Score'
@@ -66,7 +66,8 @@ class ParseCertificateTemplate():
         returns
         html : データを流し込んだテンプレート
         '''
-        assert type(position) is str, '種目名指定エラー'
+
+        assert isinstance(position, str), '種目名指定エラー'
         assert self.tmplt_file is not None, 'Class not properly initialized.'
         template = self.tmplt_env.get_template(self.tmplt_file)
 
@@ -94,7 +95,7 @@ class ParseCertificateTemplate():
                     if item[RANK] == 1:
                         # 秋の大会用
                         # certtype = '賞　状'
-                        certtype = '選手権証'
+                        certtype = '第１位'
                     else:
                         certtype = '賞　状'
                     output = template.render(certtype=certtype,
@@ -110,7 +111,7 @@ class ParseCertificateTemplate():
                                              year=self.year,
                                              month=self.month,
                                              day=self.day)
-            elif position in posi.MIX:
+            elif position in posi.ARMIX:
                 # ミックスチーム
                 output = template.render(score=item[SCORE],
                                          rank=item[RANK],

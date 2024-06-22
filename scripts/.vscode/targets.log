@@ -1,341 +1,302 @@
 make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
-# GNU Make 3.81
-# Copyright (C) 2006  Free Software Foundation, Inc.
-# This is free software; see the source for copying conditions.
-# There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
-# PARTICULAR PURPOSE.
+make: *** No rule to make target 'all'.  Stop.
 
-# This program built for i386-pc-mingw32
- 
+# GNU Make 4.4.1
+# Built for x86_64-w64-mingw32
+# Copyright (C) 1988-2023 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Tue Jul 26 14:36:46 2022
+# Make data base, printed on Sat Jun 22 18:56:42 2024
 
 # Variables
 
 # environment
-POWERSHELL_DISTRIBUTION_CHANNEL = MSI:Windows 10 Home
-# automatic
-?F = $(notdir $?)
-# automatic
-<D = $(patsubst %/,%,$(dir $<))
+GO111MODULE = on
 # environment
-CUDA_PATH_V11_6 = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6
+JAVA_HOME = C:\Users\seiic\scoop\apps\zulufx-jdk\current
 # environment
-PYTHON3_HOST_PROG = C:\Program Files\Python39\python.EXE
+SYSTEMDRIVE = C:
 # environment
-ELECTRON_NO_ATTACH_CONSOLE = 1
-# makefile
-MAKEFLAGS = Rrqp
+LUA_CPATH = C:\Users\seiic\scoop\apps\lua\current
 # environment
-TESSDATA_PREFIX = C:\Users\seiic\scoop\apps\tesseract-languages\current
-# environment
-VTUNE_PROFILER_2022_DIR = C:\Program Files (x86)\Intel\oneAPI\vtune\2022.2.0
-# environment
-VS2022INSTALLDIR = C:\Program Files\Microsoft Visual Studio\2022\Community
-# environment
-SBCL_HOME = C:\Users\seiic\scoop\apps\sbcl\current
-# automatic
-@D = $(patsubst %/,%,$(dir $@))
-# environment
-HOMEDRIVE = C:
-# automatic
-@F = $(notdir $@)
-# automatic
-^D = $(patsubst %/,%,$(dir $^))
-# makefile
-CURDIR := g:/���L�h���C�u/Seiichi-Ai/�N���u�΍R��/�܏���/scripts
-# default
-SHELL := sh.exe
-# environment
-WINDIR = C:\Windows
-# environment
-VSCODE_NLS_CONFIG = {"locale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"29207410cd77a70b4b25e4878dda93be.ja","_translationsConfigFile":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\29207410cd77a70b4b25e4878dda93be.ja\\tcf.json","_cacheRoot":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\29207410cd77a70b4b25e4878dda93be.ja","_resolvedLanguagePackCoreLocation":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\29207410cd77a70b4b25e4878dda93be.ja\\3b889b090b5ad5793f524b5d1d39fda662b96a2a","_corruptedFile":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\29207410cd77a70b4b25e4878dda93be.ja\\corrupted.info","_languagePackSupport":true}
-# environment
-ONEDRIVE = C:\Users\seiic\OneDrive
-# automatic
-?D = $(patsubst %/,%,$(dir $?))
-# environment
-NDI_SDK_DIR = C:\Program Files\NDI\NDI 5 SDK
-# makefile (from `makefile', line 2)
-PYTHON = python
-# environment
-VSCODE_PID = 26084
-# environment
-PATHEXT = .rb;.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW;.RBW;.CPL
-# environment
-STARSHIP_SESSION_KEY = QeplZ9fmUHJosK1A
-# environment
-FPS_BROWSER_USER_PROFILE_STRING = Default
-# environment
-SCALA_HOME = C:\Users\seiic\scoop\apps\scala\current
-# environment
-TMP = C:\Users\seiic\AppData\Local\Temp
-# environment
-NEKO_INSTPATH = C:\Users\seiic\scoop\apps\neko\current
-# environment
-PROGRAMW6432 = C:\Program Files
-# environment
-OPENSSL_MODULES = C:\Users\seiic\scoop\apps\openssl\current\bin
-# environment
-PROGRAMDATA = C:\ProgramData
-# environment
-CODESTATS_API_KEY = SFMyNTY.Y3kxaGNtbG5ZUT09IyNNVFk1T0RrPQ.yOOJ6rLuSdBJMnH94WzMO4kXbRfmobSCRg_uW__7zKs
-# environment
-VSCODE_CWD = G:\���L�h���C�u\Seiichi-Ai\�N���u�΍R��\�܏���\scripts
-# environment
-CHEAT_CONFIG_PATH = C:\Users\seiic\scoop\apps\cheat\current\conf.yml
-# environment
-PATH = C:\Program Files\PowerShell\7;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler;C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\libnvvp;C:\Program Files\Microsoft\jdk-17.0.1.12-hotspot\bin;C:\Program Files\Python39\Scripts\;C:\Program Files\Python39\;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Airshipper\;C:\Program Files (x86)\Calibre2\;C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.1.1\;C:\ProgramData\chocolatey\bin;C:\Program Files\LLVM\bin;C:\Program Files (x86)\dotnet\;C:\Program Files\PowerShell\7\;C:\Users\seiic\scoop\apps\emscripten\current;C:\Users\seiic\scoop\apps\rustup\current\.cargo\bin;C:\Users\seiic\scoop\apps\nodejs\current\bin;C:\Users\seiic\scoop\apps\nodejs\current;C:\Users\seiic\go\bin;C:\Users\seiic\scoop\apps\dotnet-sdk\current;C:\Users\seiic\scoop\apps\composer\current\home\vendor\bin;C:\Users\seiic\scoop\apps\openssl\current\bin;C:\Users\seiic\scoop\apps\imagemagick\current;C:\Users\seiic\scoop\apps\luarocks\current\rocks\bin;C:\Users\seiic\scoop\apps\llvm\current\bin;C:\texlive\2022\bin\win32;C:\Users\seiic\scoop\apps\haskell\current\lib\bin;C:\Users\seiic\scoop\apps\yarn\current\global\node_modules\.bin;C:\Users\seiic\scoop\apps\yarn\current\bin;C:\Users\seiic\scoop\apps\graalvm22-jdk17\current\bin;C:\Users\seiic\.nimble\bin;C:\Ruby30-x64\bin;C:\local\flutter\bin;C:\Users\seiic\scoop\apps\elixir\current\bin;C:\Users\seiic\scoop\apps\ghostscript\current\lib;C:\Users\seiic\AppData\Roaming\local\bin;C:\Users\seiic\scoop\apps\haxe\current;C:\Users\seiic\scoop\apps\spark\current\bin;C:\Users\seiic\scoop\apps\haskell\current\lib\extralibs\bin;C:\Users\seiic\scoop\apps\hadoop-winutils\current\bin;C:\Users\seiic\scoop\apps\winlibs-mingw\current\bin;C:\Users\seiic\scoop\apps\neko\current;C:\Users\seiic\scoop\shims;C:\Users\seiic\AppData\Local\Microsoft\WindowsApps;C:\Users\seiic\.dotnet\tools;D:\exercism;C:\Program Files (x86)\Nmap;C:\Users\seiic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\seiic\OneDrive\Desktop\nim-1.6.2\bin;C:\Users\seiic\AppData\Roaming\Python\Python39\Scripts;C:\texlive\2021\bin\win32;C:\Users\seiic\scoop\apps\hyper\3.2.2\resources\bin;C:\Users\seiic\scoop\apps\markdown-monster\current;G:\}ChCu\Projects\go\bin;C:\Users\seiic\.emacs.d\bin;C:\Users\seiic\.dotnet\tools;C:\Program Files (x86)\Dr. Memo;C:\Users\seiic\scoop\apps\hyper\3.2.3\resources\bin;C:\Users\seiic\.dotnet\tools;G:\�}�C�h���C�u\MyTools\bin
-# environment
-COMMONPROGRAMW6432 = C:\Program Files\Common Files
-# environment
-ZES_ENABLE_SYSMAN = 1
-# environment
-C_INCLUDE_PATH = C:\Users\seiic\scoop\apps\winlibs-mingw\current\include
-# environment
-CHOCOLATEYLASTPATHUPDATE = 132963628217417422
-# environment
-PROCESSOR_ARCHITECTURE = x86
+LC_ALL = C
 # environment
 USERPROFILE = C:\Users\seiic
 # environment
-CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
-# makefile (from `makefile', line 1)
-MAKEFILE_LIST :=  makefile
-# makefile (from `makefile', line 3)
-SCRIPT = ./createCerts.py
+STARSHIP_SESSION_KEY = GifrpqhAzuFMajWX
 # environment
-ALLUSERSPROFILE = C:\ProgramData
+LOCALAPPDATA = C:\Users\seiic\AppData\Local
+# environment
+WSLENV = WT_SESSION:WT_PROFILE_ID:
+# environment
+VSCODE_CRASH_REPORTER_PROCESS_TYPE = extensionHost
+# environment
+VSCODE_CWD = G:\���L�h���C�u\Seiichi-Ai\�N���u�΍R��\�܏���
+# makefile (from 'makefile', line 2)
+PYTHON = python
+# environment
+CHOCOLATEYINSTALL = C:\ProgramData\chocolatey
+# environment
+CUDA_PATH_V12_1 = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+# environment
+OPENSSL_MODULES = C:\Users\seiic\scoop\apps\openssl\current\bin
+# environment
+SYSTEMROOT = C:\Windows
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+PSMODULEPATH = C:\Users\seiic\OneDrive\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:\users\seiic\scoop\apps\pwsh\current\Modules;C:\Users\seiic\scoop\modules;C:\Users\seiic\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := make.exe
 # environment
 GOPATH = G:\�}�C�h���C�u\Projects\go
+# automatic
+@D = $(patsubst %/,%,$(patsubst %\,%,$(dir $@)))
+# makefile (from 'makefile', line 3)
+SCRIPT = ./createCerts.py
 # environment
-ONEAPI_ROOT = C:\Program Files (x86)\Intel\oneAPI\
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_17172_UGLFKXPBOQMFCCNK
 # environment
-NUMBER_OF_PROCESSORS = 8
+MAGICK_CODER_MODULE_PATH = C:\Users\seiic\scoop\apps\imagemagick\current\modules\coders
 # environment
-ELECTRON_RUN_AS_NODE = 1
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
-.FEATURES := target-specific order-only second-expansion else-if archives
-# environment
-CMAKE_PREFIX_PATH = C:\Users\seiic\scoop\apps\sdl2-ttf\current;C:\Users\seiic\scoop\apps\sdl2-mixer\current;C:\Users\seiic\scoop\apps\sdl2-image\current;C:\Users\seiic\scoop\apps\sdl2\current
-# environment
-NVTOOLSEXT_PATH = C:\Program Files\NVIDIA Corporation\NvToolsExt\
-# environment
-CPLUS_INCLUDE_PATH = C:\Users\seiic\scoop\apps\winlibs-mingw\current\include
+.VARIABLES := 
+# automatic
+%D = $(patsubst %/,%,$(patsubst %\,%,$(dir $%)))
+# automatic
+^D = $(patsubst %/,%,$(patsubst %\,%,$(dir $^)))
 # automatic
 %F = $(notdir $%)
 # environment
-CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_26084_FNYSGMJBSLLPSESB
+GIT_INSTALL_ROOT = C:\Users\seiic\scoop\apps\git\current
 # environment
-I_MPI_ONEAPI_ROOT = C:\Program Files (x86)\Intel\oneAPI\mpi\2021.6.0
+VSCODE_CODE_CACHE_PATH = C:\Users\seiic\AppData\Roaming\Code\CachedData\5437499feb04f7a586f677b155b039bc2b3669eb
 # environment
-PYTHON_HOST_PROG = C:\Program Files\Python39\python.EXE
+ERLANG_HOME = C:\Users\seiic\scoop\apps\erlang\current
 # environment
-MSBUILDSDKSPATH = C:\Users\seiic\scoop\apps\dotnet-sdk\current\sdk\6.0.302\Sdks
+LANG = C
+# defaul 
+t
+.LOADED := 
 # environment
-COMPUTERNAME = DESKTOP-E7MUAC7
+TMP = C:\Users\seiic\AppData\Local\Temp
+# default
+.INCLUDE_DIRS := 
+# makefile
+MAKEFLAGS = pqrR
 # environment
-PROGRAMFILES = C:\Program Files (x86)
+INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
 # environment
-DOTNET_ROOT = C:\Users\seiic\scoop\apps\dotnet-sdk\current
+ONEDRIVE = C:\Users\seiic\OneDrive
 # environment
-GROOVY_HOME = C:\Users\seiic\scoop\apps\groovy\current
+POWERSHELL_DISTRIBUTION_CHANNEL = MSI:Windows 10 Home
+# makefile
+CURDIR := g:/���L�h���C�u/Seiichi-Ai/�N���u�΍R��/�܏���/scripts
 # environment
-DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+# environment
+VSCODE_L10N_BUNDLE_LOCATION = file:///c%3A/Users/seiic/.vscode/extensions/ms-ceintl.vscode-language-pack-ja-1.90.2024061209/translations/extensions/vscode.json-language-features.i18n.json
+# automatic
+*D = $(patsubst %/,%,$(patsubst %\,%,$(dir $*)))
+# environment
+PROGRAMFILES = C:\Program Files
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# automatic
++D = $(patsubst %/,%,$(patsubst %\,%,$(dir $+)))
+# makefile (from 'makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_PID = 17172
+# environment
+CUDA_PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1
+# automatic
+?D = $(patsubst %/,%,$(patsubst %\,%,$(dir $?)))
+# environment
+NODE_UNC_HOST_ALLOWLIST = wsl$\wsl.localhost
+# environment
+NEKO_INSTPATH = C:\Users\seiic\scoop\apps\neko\current
+# environment
+WT_PROFILE_ID = {574e775e-4f2a-5b96-ac1e-a2962a402336}
+# automatic
+*F = $(notdir $*)
+# automatic
+<D = $(patsubst %/,%,$(patsubst %\,%,$(dir $<)))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"ja","osLocale":"ja","availableLanguages":{"*":"ja"},"_languagePackId":"da6bc6385a8bfc9218a6fbb0162dc463.ja","_translationsConfigFile":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\da6bc6385a8bfc9218a6fbb0162dc463.ja\\tcf.json","_cacheRoot":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\da6bc6385a8bfc9218a6fbb0162dc463.ja","_resolvedLanguagePackCoreLocation":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\da6bc6385a8bfc9218a6fbb0162dc463.ja\\5437499feb04f7a586f677b155b039bc2b3669eb","_corruptedFile":"C:\\Users\\seiic\\AppData\\Roaming\\Code\\clp\\da6bc6385a8bfc9218a6fbb0162dc463.ja\\corrupted.info","_languagePackSupport":true}
 # environment
 HAXEPATH = C:\Users\seiic\scoop\apps\haxe\current
 # environment
-PKG_CONFIG_PATH = C:\Users\seiic\scoop\apps\sdl2-ttf\current\lib\pkgconfig;C:\Users\seiic\scoop\apps\sdl2-mixer\current\lib\pkgconfig;C:\Users\seiic\scoop\apps\sdl2-image\current\lib\pkgconfig;C:\Users\seiic\scoop\apps\sdl2\current\lib\pkgconfig
+ONEDRIVECONSUMER = C:\Users\seiic\OneDrive
+# default
+MAKE_HOST := x86_64-w64-mingw32
 # environment
-RUSTUP_HOME = C:\Users\seiic\scoop\persist\rustup\.rustup
+PROGRAMDATA = C:\ProgramData
+# default
+SHELL := C:/Users/seiic/scoop/shims/sh.exe
 # environment
-ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+SSH_USER_LINUX = seiichi
 # environment
-HADOOP_HOME = C:\Users\seiic\scoop\apps\hadoop-winutils\current
+HOMEPATH = \Users\seiic
 # environment
-KOTLIN_HOME = C:\Users\seiic\scoop\apps\kotlin\current
+SBCL_HOME = C:\Users\seiic\scoop\apps\sbcl\current
+# default
+MAKECMDGOALS := all
 # environment
-WT_SESSION = ca82560d-5b17-4bc1-ae21-519994d3a65a
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+COMSPEC = C:\Windows\system32\cmd.exe
+# environment
+WINDIR = C:\Windows
+# environment
+MAKELEVEL := 0
+# makefile (from 'makefile', line 1)
+MAKE = make
+# environment
+PATH = C:\Users\seiic\scoop\apps\pwsh\current;C:\Program Files\Microsoft\jdk-17.0.8.101-hotspot\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\bin;C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v12.1\libnvvp;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\PowerShell\7;C:\ProgramData\chocolatey\bin;C:\Program Files\RECOIL\;C:\Users\seiic\scoop\apps\python\current\Scripts;C:\Users\seiic\scoop\apps\python\current;C:\Users\seiic\scoop\apps\openssl\current\bin;G:\�}�C�h���C�u\Projects\go\bin;C:\Users\seiic\scoop\apps\dart\current\bin;C:\Users\seiic\scoop\apps\imagemagick\current;C:\Users\seiic\scoop\apps\elixir\current\bin;C:\Users\seiic\scoop\apps\dotnet-sdk\current;C:\Users\seiic\scoop\apps\mingw-winlibs\current\bin;C:\Users\seiic\scoop\apps\zulufx-jdk\current\bin;C:\Users\seiic\scoop\apps\haxe\current;C:\Users\seiic\scoop\apps\perl\current\perl\site\bin;C:\Users\seiic\scoop\apps\perl\current\perl\bin;C:\Users\seiic\scoop\apps\nvm\current\nodejs\nodejs;C:\Users\seiic\scoop\apps\neko\current;C:\Users\seiic\OneDrive\Projects\PowerShell\bin;C:\Users\seiic\scoop\shims;C:\Users\seiic\AppData\Local\Microsoft\WindowsApps;C:\Users\seiic\.dotnet\tools;C:\Users\seiic\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\seiic\.cargo\bin;C:\Users\seiic\.dotnet\tools;C:\Users\seiic\.nimble\bin;C:\Users\seiic\.dotnet\tools;G:\�}�C�h���C�u\MyTools\bin
+# environment
+COMPUTERNAME = HORINOUCHI-2
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+VIRTUAL_ENV_DISABLE_PROMPT = 1
+# environment
+PROMPT = $P$G
+# environment
+OPENSSL_CONF = C:\Users\seiic\scoop\apps\openssl\current\bin\cnf\openssl.cnf
+# environment
+CHOCOLATEYLASTPATHUPDATE = "133384270187154875"
+# environment
+CHEAT_CONFIG_PATH = C:\Users\seiic\scoop\apps\cheat\current\conf.yml
+# environment
+GOBIN = G:\�}�C�h���C�u\Projects\go\bin
+# environment
+MAGICK_CONFIGURE_PATH = C:\Users\seiic\scoop\apps\imagemagick\current
+# environment
+WT_SESSION = 8267d3a9-e342-4938-b875-02116fd605d6
+# environment
+OPENSSL_LIB_DIR = C:\Users\seiic\scoop\apps\openssl\current\lib
+# environment
+LOGONSERVER = \\HORINOUCHI-2
 # environment
 USERNAME = seiic
 # environment
-LAZARUSDIR = C:\Users\seiic\scoop\apps\lazarus\current
+COMMONPROGRAMFILES = C:\Program Files\Common Files
+# automatic
+?F = $(notdir $?)
+# environment
+PROGRAMW6432 = C:\Program Files
+# environment
+OPENSSL_ROOT_DIR = C:\Users\seiic\scoop\apps\openssl\current
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.CPL
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+SBT_HOME = C:\Users\seiic\scoop\apps\sbt\current
+# environment
+USERDOMAIN = HORINOUCHI-2
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+OS = Windows_NT
+# environment
+MAGICK_HOME = C:\Users\seiic\scoop\apps\imagemagick\current
+# makefile
+.DEFAULT_GOAL := combi
+# environment
+NVM_HOME = C:\Users\seiic\scoop\apps\nvm\current
+# environment
+LUA_EXE_PATH = C:\Users\seiic\scoop\apps\lua\current
+# environment
+EDITOR = nvim
+# default
+MAKE_VERSION := 4.4.1
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+# environment
+OPENSSL_INCLUDE_DIR = C:\Users\seiic\scoop\apps\openssl\current\include
+# environment
+USERDOMAIN_ROAMINGPROFILE = HORINOUCHI-2
+# environment
+NUMBER_OF_PROCESSORS = 20
+# environment
+STARSHIP_SHELL = pwsh
 # environment
 PUBLIC = C:\Users\Public
+# environment
+PAGER = C:\Users\seiic\scoop\apps\moar\current\moar.exe
+# environment
+APPDATA = C:\Users\seiic\AppData\Roaming
+# environment
+LAZARUSDIR = C:\Users\seiic\scoop\apps\lazarus\current
+# environment
+SIV3D_0_6_14 = C:\Users\seiic\OneDrive\Documents\OpenSiv3D_0.6.14
+# environment
+HOMEDRIVE = C:
+# environment
+NVM_SYMLINK = C:\Users\seiic\scoop\persist\nvm\nodejs\nodejs
+# environment
+PROCESSOR_ARCHITECTURE = AMD64
+# environment
+MSBUILDSDKSPATH = C:\Users\seiic\scoop\apps\dotnet-sdk\current\sdk\8.0.301\Sdks
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
 HOME = C:\Users\seiic
-# default
-SUFFIXES := 
-# environment
-VSCODE_CLI = 1
-# environment
-VSCODE_CODE_CACHE_PATH = C:\Users\seiic\AppData\Roaming\Code\CachedData\3b889b090b5ad5793f524b5d1d39fda662b96a2a
-# environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
-# environment
-COMMONPROGRAMFILES = C:\Program Files (x86)\Common Files
-# environment
-LOGONSERVER = \\DESKTOP-E7MUAC7
-# environment
-OPENSSL_CONF = C:\Users\seiic\scoop\apps\openssl\current\bin\cnf\openssl.cnf
-# environment
-ONEDRIVECONSUMER = C:\Users\seiic\OneDrive
-# environment
-VSCODE_HANDLES_UNCAUGHT_ERRORS = true
-# environment
-USERDOMAIN = DESKTOP-E7MUAC7
-# environment
-MAGICK_CONFIGURE_PATH = C:\Users\seiic\scoop\apps\imagemagick\current
-# environment
-GRAALVM_HOME = C:\Users\seiic\scoop\apps\graalvm22-jdk17\current
-# environment
-RUSTC_WRAPPER = C:\Users\seiic\scoop\shims\sccache.EXE
-# environment
-MIC_LD_LIBRARY_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
-# default
-MAKE = $(MAKE_COMMAND)
-# default
-MAKECMDGOALS := all
-# environment
-MAGICK_HOME = C:\Users\seiic\scoop\apps\imagemagick\current
-# environment
-JAVA_HOME = C:\Users\seiic\scoop\apps\graalvm22-jdk17\current
-# default
-MAKE_VERSION := 3.81
-# environment
-EDITOR = nvim
-# makefile
-.DEFAULT_GOAL := combi
-# environment
-OPENSSL_INCLUDE_DIR = C:\Users\seiic\scoop\apps\openssl\current\include
-# environment
-GOROOT = C:\Users\seiic\scoop\apps\go\current
-# environment
-WSLENV = WT_SESSION::WT_PROFILE_ID
-# environment
-PROGRAMFILES(X86) = C:\Program Files (x86)
-# automatic
-%D = $(patsubst %/,%,$(dir $%))
-# environment
-JD2_HOME = C:\Users\seiic\AppData\Local\JDownloader 2.0
-# environment
-LOCALAPPDATA = C:\Users\seiic\AppData\Local
-# environment
-SSH_USER_LINUX = seiichi
-# environment
-PSMODULEPATH = C:\Users\seiic\OneDrive\Documents\PowerShell\Modules;C:\Program Files\PowerShell\Modules;c:\program files\powershell\7\Modules;C:\Users\seiic\scoop\modules;C:\Users\seiic\Documents\WindowsPowerShell\Modules;C:\Program Files (x86)\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules;C:\Program Files (x86)\AutoIt3\AutoItX;C:\Program Files (x86)\AutoIt3\Beta\AutoItX
-# default
-MAKE_COMMAND := C:/Users/seiic/scoop/apps/gow/current/bin/make
-# environment
-PROCESSOR_ARCHITEW6432 = AMD64
-# default
-.VARIABLES := 
-# automatic
-*F = $(notdir $*)
-# environment
-NODE_PATH = C:\Users\seiic\scoop\apps\yarn\current\global\node_modules
-# environment
-PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 158 Stepping 9, GenuineIntel
-# environment
-OS = Windows_NT
-# environment
-VSCODE_IPC_HOOK = \\.\pipe\9dd029cd28ad2c1d10f618d7febe9801-1.69.2-main-sock
-# environment
-HASHLINKPATH = C:\Users\seiic\scoop\apps\hashlink\current
-# environment
-SPARK_HOME = C:\Users\seiic\scoop\apps\spark\current
-# environment
-HOMEPATH = \Users\seiic
 # environment
 COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
 # environment
-PROMPT = $P$G
-# environment
-MFLAGS = -Rrqp
-# automatic
-*D = $(patsubst %/,%,$(dir $*))
-# environment
-INTEL_DEV_REDIST = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\
-# environment
-SYSTEMROOT = C:\Windows
-# automatic
-+D = $(patsubst %/,%,$(dir $+))
-# automatic
-+F = $(notdir $+)
-# environment
-VS2019INSTALLDIR = C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools
-# environment
-APPDATA = C:\Users\seiic\AppData\Roaming
-# environment
-__COMPAT_LAYER = DetectorsAppHealth
+ELECTRON_RUN_AS_NODE = 1
 # environment
 TEMP = C:\Users\seiic\AppData\Local\Temp
 # environment
-COMPOSER_HOME = C:\Users\seiic\scoop\persist\composer\home
-# environment
-WT_PROFILE_ID = {574e775e-4f2a-5b96-ac1e-a2962a402336}
-# environment
-MAGICK_CODER_MODULE_PATH = C:\Users\seiic\scoop\apps\imagemagick\current\modules\coders
-# environment
-COMSPEC = C:\Windows\system32\cmd.exe
-# environment
-ADVISOR_2022_DIR = C:\Program Files (x86)\Intel\oneAPI\advisor\2022.1.0
+VSCODE_IPC_HOOK = \\.\pipe\0794e4b6-1.90.2-main-sock
 # default
-MAKEFILES := 
-# environment
-LUAROCKS_CONFIG = C:\Users\seiic\scoop\apps\luarocks\current\config.lua
-# environment
-ERLANG_HOME = C:\Users\seiic\scoop\apps\erlang\current
+.RECIPEPREFIX := 
 # automatic
 <F = $(notdir $<)
+# default
+SUFFIXES := 
 # environment
-XDG_CONFIG_HOME = C:\Users\seiic\.config
-# makefile (from `makefile', line 1)
-﻿MAKE = make
-# environment
-LC_ALL = C
-# environment
-CARGO_HOME = C:\Users\seiic\scoop\persist\rustup\.cargo
-# environment
-VIRTUAL_ENV_DISABLE_PROMPT = 1
-# automatic
-^F = $(notdir $^)
-# environment
-CUDA_PATH = C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6
-# environment
-GIT_INSTALL_ROOT = C:\Users\seiic\scoop\apps\git\current
-# environment
-SCROLLVIEW_PATH = C:\Users\seiic\scoop\persist\tesseract\tessdata
-# environment
-SYSTEMDRIVE = C:
+ALLUSERSPROFILE = C:\ProgramData
 # environment
 SESSIONNAME = Console
 # environment
-PROCESSOR_REVISION = 9e09
+VSCODE_CLI = 1
+# environment
+ELECTRON_NO_ATTACH_CONSOLE = 1
+# environment
+KOTLIN_HOME = C:\Users\seiic\scoop\apps\kotlin\current
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs notintermediate shell-export archives jobserver output-sync dospaths
+# environment
+MIC_LD_LIBRARY_PATH = C:\Program Files (x86)\Common Files\Intel\Shared Libraries\compiler\lib\mic
+# environment
+PROCESSOR_REVISION = 9702
+# environment
+SCALA_HOME = C:\Users\seiic\scoop\apps\scala\current
 # environment
 LAZDIR = C:\Users\seiic\scoop\apps\lazarus\current
 # environment
-PHP_INI_SCAN_DIR = C:\Users\seiic\scoop\apps\php\current\cli;C:\Users\seiic\scoop\apps\php\current\cli\conf.d;
+DOTNET_ROOT = C:\Users\seiic\scoop\apps\dotnet-sdk\current
 # environment
-MAKELEVEL := 0
-# environment
-LANG = C
-# environment
-PROCESSOR_LEVEL = 6
-# environment
-OPENSSL_LIB_DIR = C:\Users\seiic\scoop\apps\openssl\current\lib
-# environment
-FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
-# environment
-GSTREAMER_1_0_ROOT_MSVC_X86_64 = C:\gstreamer\1.0\msvc_x86_64\
-# environment
-STARSHIP_SHELL = pwsh
-# environment
-USERDOMAIN_ROAMINGPROFILE = DESKTOP-E7MUAC7
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 151 Stepping 2, GenuineIntel
 # variable set hash-table stats:
-# Load=161/1024=16%, Rehash=0, Collisions=22/181=12%
+# Load=141/1024=14%, Rehash=0, Collisions=21/167=13%
 
 # Pattern-specific Variable Values
 
@@ -343,81 +304,9 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-E7MUAC7
 
 # Directories
 
-# C:\Users\seiic\scoop\apps\hyper\3.2.2\resources\bin: could not be stat'd.
-# C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\bin (key C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin, mtime 1649812873): 45 files, no impossibilities.
-# C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler (key C:/Program Files (x86)/Common Files/Intel/Shared Libraries/redist/intel64/compiler, mtime 1629333692): 17 files, no impossibilities.
-# C:\Program Files\LLVM\bin (key C:/Program Files/LLVM/bin, mtime 1651889195): 120 files, no impossibilities.
-# C:\Users\seiic\go\bin (key C:/Users/seiic/go/bin, mtime 1642986388): 8 files, no impossibilities.
-# C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin (key C:/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin, mtime 1649815471): 127 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\elixir\current\bin (key C:/Users/seiic/scoop/apps/elixir/current/bin, mtime 1649311335): 11 files, no impossibilities.
-# C:\Program Files\NVIDIA Corporation\Nsight Compute 2022.1.1\ (key C:/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/, mtime 1649812750): 12 files, no impossibilities.
-# C:\Windows\System32\WindowsPowerShell\v1.0\ (key C:/Windows/System32/WindowsPowerShell/v1.0/, mtime 1629411930): 31 files, no impossibilities.
-# C:\Windows\System32\Wbem (key C:/Windows/System32/Wbem, mtime 1657737580): 154 files, no impossibilities.
-# . (key g:/���L�h���C�u/Seiichi-Ai/�N���u�΍R��/�܏���/scripts, mtime 1658813797): 14 files, no impossibilities.
-# C:\Program Files (x86)\Dr. Memo: could not be stat'd.
-# C:\Users\seiic\scoop\apps\winlibs-mingw\current\bin (key C:/Users/seiic/scoop/apps/winlibs-mingw/current/bin, mtime 1629861549): 84 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\rustup\current\.cargo\bin (key C:/Users/seiic/scoop/apps/rustup/current/.cargo/bin, mtime 1658161397): 18 files, no impossibilities.
-# C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common (key C:/Program Files (x86)/NVIDIA Corporation/PhysX/Common, mtime 1637739809): 10 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\hadoop-winutils\current\bin (key C:/Users/seiic/scoop/apps/hadoop-winutils/current/bin, mtime 1631051963): 10 files, no impossibilities.
-# C:\local\flutter\bin (key C:/local/flutter/bin, mtime 1652310707): 9 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\haskell\current\lib\extralibs\bin: could not be stat'd.
-# C:\Users\seiic\.nimble\bin (key C:/Users/seiic/.nimble/bin, mtime 1657428663): 34 files, no impossibilities.
-# C:\Program Files\PowerShell\7 (key C:/Program Files/PowerShell/7, mtime 1656532087): 478 files, no impossibilities.
-# C:\ProgramData\chocolatey\bin (key C:/ProgramData/chocolatey/bin, mtime 1651889041): 11 files, no impossibilities.
-# C:\Program Files\dotnet\ (key C:/Program Files/dotnet/, mtime 1658274035): 13 files, no impossibilities.
-# C:\Program Files (x86)\Nmap (key C:/Program Files (x86)/Nmap, mtime 1632803265): 37 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\nodejs\current (key C:/Users/seiic/scoop/apps/nodejs/current, mtime 1658161358): 20 files, no impossibilities.
-# D:\exercism (key D:/exercism, mtime 1631999846): 5 files, no impossibilities.
-# C:\texlive\2022\bin\win32 (key C:/texlive/2022/bin/win32, mtime 1654839451): 554 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\haxe\current (key C:/Users/seiic/scoop/apps/haxe/current, mtime 1646605703): 16 files, no impossibilities.
-# C:\Program Files\PowerShell\7\ (key C:/Program Files/PowerShell/7/, mtime 1656532087): 478 files, no impossibilities.
-# G:\}ChCu\Projects\go\bin: could not be stat'd.
-# C:\Users\seiic\scoop\apps\imagemagick\current (key C:/Users/seiic/scoop/apps/imagemagick/current, mtime 1657427505): 84 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\yarn\current\bin (key C:/Users/seiic/scoop/apps/yarn/current/bin, mtime 1652660716): 7 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\openssl\current\bin (key C:/Users/seiic/scoop/apps/openssl/current/bin, mtime 1657448851): 18 files, no impossibilities.
-# C:\Windows\System32\OpenSSH\: could not be stat'd.
-# C:\Users\seiic\scoop\apps\emscripten\current (key C:/Users/seiic/scoop/apps/emscripten/current, mtime 1658627932): 36 files, no impossibilities.
-# C:\Program Files\Microsoft SQL Server\130\Tools\Binn\ (key C:/Program Files/Microsoft SQL Server/130/Tools/Binn/, mtime 1630455919): 4 files, no impossibilities.
-# C:\Windows (key C:/Windows, mtime 1657737579): 124 files, no impossibilities.
-# C:\Users\seiic\AppData\Local\Programs\Microsoft VS Code\bin (key C:/Users/seiic/AppData/Local/Programs/Microsoft VS Code/bin, mtime 1658196692): 4 files, no impossibilities.
-# C:\Program Files\Microsoft\jdk-17.0.1.12-hotspot\bin (key C:/Program Files/Microsoft/jdk-17.0.1.12-hotspot/bin, mtime 1643332808): 123 files, no impossibilities.
-# C:\Users\seiic\AppData\Roaming\Python\Python39\Scripts (key C:/Users/seiic/AppData/Roaming/Python/Python39/Scripts, mtime 1658281010): 102 files, no impossibilities.
-# C:\Users\seiic\scoop\shims (key C:/Users/seiic/scoop/shims, mtime 1658712618): 896 files, no impossibilities.
-# C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\ia32_win\compiler (key C:/Program Files (x86)/Intel/oneAPI/compiler/latest/windows/redist/ia32_win/compiler, mtime 1655432079): 16 files, no impossibilities.
-# C:\Program Files (x86)\Calibre2\ (key C:/Program Files (x86)/Calibre2/, mtime 1649213049): 24 files, no impossibilities.
-# C:\Users\seiic\.dotnet\tools (key C:/Users/seiic/.dotnet/tools, mtime 1639667806): 4 files, no impossibilities.
-# C:\Users\seiic\.emacs.d\bin (key C:/Users/seiic/.emacs.d/bin, mtime 1651814399): 6 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\composer\current\home\vendor\bin: could not be stat'd.
-# C:\Users\seiic\scoop\apps\graalvm22-jdk17\current\bin (key C:/Users/seiic/scoop/apps/graalvm22-jdk17/current/bin, mtime 1651805888): 133 files, no impossibilities.
-# C:\Program Files (x86)\Intel\oneAPI\compiler\latest\windows\redist\intel64_win\compiler (key C:/Program Files (x86)/Intel/oneAPI/compiler/latest/windows/redist/intel64_win/compiler, mtime 1655432079): 16 files, no impossibilities.
-# C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.6\libnvvp (key C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp, mtime 1649812852): 14 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\spark\current\bin (key C:/Users/seiic/scoop/apps/spark/current/bin, mtime 1643453877): 29 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\hyper\3.2.3\resources\bin (key C:/Users/seiic/scoop/apps/hyper/3.2.3/resources/bin, mtime 1650058318): 6 files, no impossibilities.
-# C:\Ruby30-x64\bin (key C:/Ruby30-x64/bin, mtime 1657516247): 114 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\nodejs\current\bin (key C:/Users/seiic/scoop/apps/nodejs/current/bin, mtime 1658161359): 12 files, no impossibilities.
-# C:\Program Files (x86)\dotnet\ (key C:/Program Files (x86)/dotnet/, mtime 1657709762): 9 files, no impossibilities.
-# C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\ia32\vc_mt\ (key C:/Program Files (x86)/Intel/oneAPI/tbb/latest/redist/ia32/vc_mt/, mtime 1655432029): 28 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\yarn\current\global\node_modules\.bin: could not be stat'd.
-# C:\Users\seiic\OneDrive\Desktop\nim-1.6.2\bin: could not be stat'd.
-# C:\Users\seiic\scoop\apps\markdown-monster\current: could not be stat'd.
-# C:\Windows\system32 (key C:/Windows/system32, mtime 1658797197): 3078 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\neko\current (key C:/Users/seiic/scoop/apps/neko/current, mtime 1629422177): 29 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\haskell\current\lib\bin (key C:/Users/seiic/scoop/apps/haskell/current/lib/bin, mtime 1654654782): 6 files, no impossibilities.
-# C:\Program Files (x86)\Intel\oneAPI\tbb\latest\redist\intel64\vc_mt\ (key C:/Program Files (x86)/Intel/oneAPI/tbb/latest/redist/intel64/vc_mt/, mtime 1655432029): 28 files, no impossibilities.
-# G:\�}�C�h���C�u\MyTools\bin (key G:/�}�C�h���C�u/MyTools/bin, mtime 1634108519): 20 files, no impossibilities.
-# C:\Users\seiic\AppData\Local\Microsoft\WindowsApps (key C:/Users/seiic/AppData/Local/Microsoft/WindowsApps, mtime 1658655369): 15 files, no impossibilities.
-# C:\texlive\2021\bin\win32 (key C:/texlive/2021/bin/win32, mtime 1643270218): 548 files, no impossibilities.
-# C:\Program Files\Airshipper\ (key C:/Program Files/Airshipper/, mtime 1641427999): 3 files, no impossibilities.
-# C:\Users\seiic\AppData\Roaming\local\bin (key C:/Users/seiic/AppData/Roaming/local/bin, mtime 1649988707): 5 files, no impossibilities.
-# C:\Program Files\Python39\ (key C:/Program Files/Python39/, mtime 1640925049): 18 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\dotnet-sdk\current (key C:/Users/seiic/scoop/apps/dotnet-sdk/current, mtime 1658159692): 13 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\ghostscript\current\lib (key C:/Users/seiic/scoop/apps/ghostscript/current/lib, mtime 1649198257): 223 files, no impossibilities.
-# C:\Program Files\Python39\Scripts\ (key C:/Program Files/Python39/Scripts/, mtime 1640925049): 5 files, no impossibilities.
-# C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR (key C:/Program Files/NVIDIA Corporation/NVIDIA NvDLISR, mtime 1637739851): 5 files, no impossibilities.
-# C:\Users\seiic\scoop\apps\luarocks\current\rocks\bin: could not be stat'd.
-# C:\Users\seiic\scoop\apps\llvm\current\bin (key C:/Users/seiic/scoop/apps/llvm/current/bin, mtime 1656373523): 120 files, no impossibilities.
+# . (key g:/���L�h���C�u/Seiichi-Ai/�N���u�΍R��/�܏���/scripts, mtime 1719050146): 14 files, no impossibilities.
 
-# 8241 files, no impossibilities in 73 directories.
+# 14 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -427,12 +316,10 @@ USERDOMAIN_ROAMINGPROFILE = DESKTOP-E7MUAC7
 
 # Not a target:
 all:
-#  Command-line target.
+#  Command line target.
 #  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 .PHONY: combi version
 #  Implicit rule search has not been done.
@@ -446,53 +333,43 @@ all:
 #  File has not been updated.
 
 # Not a target:
-makefile:
+Makefile:
 #  Implicit rule search has been done.
+#  File is secondary (prerequisite of .SECONDARY).
 #  Last modified 2019-07-07 00:03:36
 #  File has been updated.
 #  Successfully updated.
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/0=0%
 
 combi:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 7):
+#  recipe to execute (from 'makefile', line 7):
 	$(PYTHON) $(SCRIPT) -c
-	
-
-# Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
 
 version:
 #  Phony target (prerequisite of .PHONY).
 #  Implicit rule search has not been done.
 #  File does not exist.
 #  File has not been updated.
-#  commands to execute (from `makefile', line 10):
+#  recipe to execute (from 'makefile', line 10):
 	$(PYTHON) $(SCRIPT) -v
-	
 
 # files hash-table stats:
-# Load=7/1024=1%, Rehash=0, Collisions=0/20=0%
+# Load=7/1024=1%, Rehash=0, Collisions=0/22=0%
 # VPATH Search Paths
 
-# No `vpath' search paths.
+# No 'vpath' search paths.
 
-# No general (`VPATH' variable) search path.
+# No general ('VPATH' variable) search path.
 
-# # of strings in strcache: 1
-# # of strcache buffers: 1
-# strcache size: total = 4096 / max = 4096 / min = 4096 / avg = 4096
-# strcache free: total = 4087 / max = 4087 / min = 4087 / avg = 4087
+# strcache buffers: 1 (0) / strings = 20 / storage = 244 B / avg = 12 B
+# current buf: size = 8162 B / used = 244 B / count = 20 / avg = 12 B
 
-# Finished Make data base on Tue Jul 26 14:36:46 2022
+# strcache performance: lookups = 28 / hit rate = 28%
+# hash-table stats:
+# Load=20/8192=0%, Rehash=0, Collisions=1/28=4%
+# Finished Make data base on Sat Jun 22 18:56:42 2024
 
  
-make: *** No rule to make target `all'.  Stop.
-
