@@ -14,9 +14,9 @@ import datetime
 import Positions as posi
 
 # 賞状の日付け
-YEAR = 2023
-MONTH = 11
-DAY = 26
+YEAR = 2024
+MONTH = 10
+DAY = 12
 
 POSI = 'Position'
 SCORE = 'Score'

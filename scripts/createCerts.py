@@ -2,7 +2,6 @@
 # -*- coding : utf-8 -*-
 # Seiichi Ariga <seiichi.ariga@gmail.com>
 
-
 import os
 import sys
 import argparse

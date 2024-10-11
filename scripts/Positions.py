@@ -14,6 +14,7 @@ class Positions(Enum):
     FR3X20BR = 10
     FR60PRBR = 11
     FR40PRBR = 12
+    FR20PRBR = 13
 
 
 '''
@@ -35,7 +36,7 @@ SBW = ['R3PW', 'RPRW']
 SBSH = ['R6']
 SB = SBM + SBW + SBSH
 
-P300 = ['300FR60PR', '300STR3X20', '300FR40PR']
+P300 = ['FR60PR', 'FR3X20', 'FR40PR', 'FR20PR']
 
 POSITIONS = SB + AR + P300
 
