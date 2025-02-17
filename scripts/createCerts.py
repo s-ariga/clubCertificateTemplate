@@ -100,6 +100,7 @@ def createCertsTeamCombined():
     総合団体の賞状を作成する
     '''
     result = pd.read_excel(RESULT_TEAM_COMBI)
+    print(RESULT_TEAM_COMBI)
     html = tp.ParseCertificateTemplate(TEMPLATE_DIR,
                                        TEMPLATE_TEAM_COMBI,
                                        result)

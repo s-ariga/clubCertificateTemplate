@@ -8,15 +8,15 @@
 '''
 import os
 import jinja2
-import pandas as pd
+# import pandas as pd
 import datetime
 
 import Positions as posi
 
 # 賞状の日付け
 YEAR = 2024
-MONTH = 10
-DAY = 12
+MONTH = 11
+DAY = 24
 
 POSI = 'Position'
 SCORE = 'Score'
@@ -139,9 +139,9 @@ class ParseCertificateTemplate():
         当日以外の賞状を作るとき用
         年、月、日を設定
         '''
-        self.year = self._get_reiwa(year, gannen=True)
-        self.month = month
-        self.day = day
+        self.year = 6 # self._get_reiwa(year, gannen=True)
+        self.month = 11 # month
+        self.day = 24 # day
 
     def _get_reiwa(self, year, gannen=False):
         '''
@@ -167,5 +167,5 @@ class ParseCertificateTemplate():
         return 'font-size:{0}px;'.format(fs)
 
 
-if __name__ == '__main__':
-    print("クラブ戦用賞状印刷")
+if __name__ == '__main__': # これはライブラリ
+    print("クラブ戦用賞状印刷用ライブラリ")
